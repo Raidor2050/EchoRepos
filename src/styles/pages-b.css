@@ -12,9 +12,14 @@
 
 /* ── categories ── */
 .page-cats{position:relative;overflow:hidden}
-.bubble-field{margin:8px auto 26px;position:relative;z-index:1}
+.bubble-field{margin:-6px 0 10px;position:relative;z-index:1;border:none;background:transparent}
+.bubble-field svg{display:block;width:100%;height:auto;outline:none}
 .bubble{transition:r .25s}
 .bubble-field g:hover .bubble{filter:brightness(1.35)}
+@media (max-width:759px){
+  .bubble-field{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-inline:-4vw}
+  .bubble-field svg{min-width:920px}
+}
 .cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:14px;margin-top:34px}
 .cat-card--row{flex-direction:row;align-items:center;gap:14px;padding:16px 18px}
 .cat-card__glyph{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:var(--r-md);background:color-mix(in srgb,var(--cat-c) 13%,transparent);color:var(--cat-c)}

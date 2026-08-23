@@ -24,16 +24,16 @@ export default function Categories() {
         />
       </header>
 
-      <div className="container bubble-field" aria-hidden>
-        <svg viewBox="0 0 900 380" width="100%">
+      <div className="bubble-field" aria-hidden>
+        <svg viewBox="0 0 1400 540" width="100%">
           {CATEGORIES.map((c, i) => {
             const n = categoryCount(c.id)
-            const r = 26 + (n / max) * 46
+            const r = 32 + (n / max) * 62
             /* deterministic pseudo-layout: golden-angle spiral clusters */
             const a = i * 2.39996
-            const rad = 120 + (i % 3) * 62
-            const cx = 450 + Math.cos(a) * rad * 1.55
-            const cy = 190 + Math.sin(a) * rad * 0.72
+            const rad = 150 + (i % 3) * 88
+            const cx = 700 + Math.cos(a) * rad * 1.95
+            const cy = 270 + Math.sin(a) * rad * 1.05
             return (
               <motion.g
                 key={c.id}
@@ -44,12 +44,12 @@ export default function Categories() {
                 style={{ transformOrigin: `${cx}px ${cy}px`, cursor: 'pointer' }}
                 onClick={() => navigate(`/explore?cat=${c.id}`)}
               >
-                <circle cx={cx} cy={cy} r={r + 10} fill={`${c.hue}0d`} stroke={c.hue} strokeOpacity="0.25" />
+                <circle cx={cx} cy={cy} r={r + 12} fill={`${c.hue}0d`} stroke={c.hue} strokeOpacity="0.25" />
                 <circle cx={cx} cy={cy} r={r} fill={`${c.hue}1f`} stroke={c.hue} strokeWidth="1.4" className="bubble" style={{ '--cat-c': c.hue } as React.CSSProperties} />
-                <text x={cx} y={cy - 2} textAnchor="middle" fontSize="12.5" fontWeight="700" fill="#e8eef6" fontFamily="var(--font-display)">
+                <text x={cx} y={cy - 2} textAnchor="middle" fontSize="14" fontWeight="700" fill="#e8eef6" fontFamily="var(--font-display)">
                   {n}
                 </text>
-                <text x={cx} y={cy + 14} textAnchor="middle" fontSize="9.5" fill={c.hue} fontFamily="var(--font-mono)" letterSpacing="1">
+                <text x={cx} y={cy + 17} textAnchor="middle" fontSize="11" fill={c.hue} fontFamily="var(--font-mono)" letterSpacing="1.2">
                   {c.label.toUpperCase()}
                 </text>
               </motion.g>
