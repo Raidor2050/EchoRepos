@@ -69,7 +69,7 @@ function DetailBody({ repo }: { repo: NonNullable<ReturnType<typeof getRepo>> })
           <span className="pill">updated {formatMonth(repo.updated)}</span>
         </div>
 
-        <div style={{ display: 'flex', gap: 10, marginTop: 18, justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: 10, marginTop: 18, flexWrap: 'wrap' }}>
           <a className="btn btn--primary" href={githubUrl(repo.id)} target="_blank" rel="noreferrer">
             Open on GitHub <IconExternal size={15} />
           </a>

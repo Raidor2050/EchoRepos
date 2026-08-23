@@ -50,17 +50,17 @@ export default function Home() {
         </div>
         <DataStream y="18%" delay={0} />
         <DataStream y="82%" hue="#ff6ad5" delay={2.5} duration={9} />
-        <div className="hero__inner container" style={{ textAlign: 'center' }}>
-          <motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} style={{ textAlign: 'center', margin: '0 auto' }}>
+        <div className="hero__inner container">
+          <motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
             <span className="eyebrow">
               <span className="eyebrow__dot" /> {REPO_COUNT} hand-picked repositories · zero fluff
             </span>
-            <h1 className="hero__title" style={{ marginInline: 'auto' }}>
+            <h1 className="hero__title">
               Navigate the
               <br />
               <span className="grad-text">open source</span> universe
             </h1>
-            <p className="hero__sub" style={{ marginInline: 'auto' }}>
+            <p className="hero__sub">
               GitHub hosts 400 million repositories. You need ten good ones.
               EchoRepos maps the signal: searchable, explainable, beginner-welcoming.
             </p>
@@ -73,7 +73,7 @@ export default function Home() {
           >
             <CommandSearch variant="hero" />
           </motion.div>
-          <motion.div className="hero__stats" style={{ justifyContent: 'center' }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }}>
+          <motion.div className="hero__stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }}>
             <Stat n={`${REPO_COUNT}`} l="curated repos" />
             <Stat n="16" l="ecosystems" />
             <Stat n={`${formatCompact(TOTAL_STARS)}★`} l="combined stars" />
@@ -86,7 +86,7 @@ export default function Home() {
       {/* ── how it works ── */}
       <section className="section">
         <div className="container">
-          <SectionHeading eyebrow="the loop" title="From lost to contributing in three moves" sub="No sign-up. Everything runs in your browser." align="center" />
+          <SectionHeading eyebrow="the loop" title="From lost to contributing in three moves" sub="No sign-up. Everything runs in your browser." />
           <div className="steps-grid">
             {STEPS.map((s, i) => (
               <motion.article
@@ -139,17 +139,19 @@ export default function Home() {
 
       {/* ── git history teaser ── */}
       <section className="section">
-        <div className="container teaser-stack">
-          <span className="eyebrow"><span className="eyebrow__dot" /> new here?</span>
-          <h2 className="h2">Git history is a chain of tiny saves</h2>
-          <p className="lead teaser-lead">
-            Every repo is a story told in commits. Our 12-lesson track takes you from
-            "what is a repository" to confidently opening your first pull request. Each lesson is under four minutes,
-            each with a living diagram.
-          </p>
-          <Link to="/learn" className="btn btn--primary" style={{ margin: '6px auto 30px' }}>
-            Start Lesson 1: what is open source? <IconArrowRight size={15} />
-          </Link>
+        <div className="container split">
+          <div>
+            <span className="eyebrow"><span className="eyebrow__dot" /> new here?</span>
+            <h2 className="h2">Git history is a chain of tiny saves</h2>
+            <p className="lead">
+              Every repo is a story told in commits. Our 12-lesson track takes you from
+              "what is a repository" to confidently opening your first pull request. Each lesson is under four minutes,
+              each with a living diagram.
+            </p>
+            <Link to="/learn" className="btn btn--primary">
+              Start Lesson 1: what is open source? <IconArrowRight size={15} />
+            </Link>
+          </div>
           <div className="split__art glass">
             <CommitChainDiagram />
             <p className="mono-note">4 commits on main · HEAD → d97f2b</p>

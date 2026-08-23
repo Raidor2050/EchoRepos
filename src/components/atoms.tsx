@@ -141,7 +141,7 @@ export function SectionHeading({
   eyebrow,
   title,
   sub,
-  align = 'center',
+  align = 'start',
 }: {
   eyebrow: string
   title: string

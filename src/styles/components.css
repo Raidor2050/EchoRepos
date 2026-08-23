@@ -786,6 +786,18 @@ a.tag:hover {
     grid-template-columns: 1fr 1fr;
   }
 }
+/* prevent iOS Safari auto-zoom on input focus */
+@media (max-width: 740px) {
+  .cmd__input {
+    font-size: 16px;
+  }
+}
+@media (max-width: 560px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
 
 /* Generic page shell */
 .page {
