@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import type { Repo } from '../data/types'
 import { CATEGORIES } from '../data/taxonomy'
-import { formatCompact } from '../lib/format'
+import { formatCompact, githubUrl } from '../lib/format'
 import { usePrefersReducedMotion } from '../lib/hooks'
 import { buildChords, buildNodes, buildParticles, HUB, makeSprite, type UniNode } from './universe/layout'
 
@@ -11,11 +10,11 @@ import { buildChords, buildNodes, buildParticles, HUB, makeSprite, type UniNode 
  * Canvas 2D · parametric orbital drift · pre-rendered glow sprites ·
  * adaptive quality (DPR cap, fps watchdog, visibility pause) ·
  * reduced-motion renders a static constellation.
+ * Every node is a catalog repo; clicking one opens it on GitHub.
  */
 export function UniverseCanvas() {
   const wrapRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const navigate = useNavigate()
   const reducedMotion = usePrefersReducedMotion()
   const [hover, setHover] = useState<{ repo: Repo; x: number; y: number } | null>(null)
 
@@ -33,7 +32,6 @@ export function UniverseCanvas() {
     let height = 0
     let dpr = Math.min(window.devicePixelRatio || 1, 1.75)
     let raf = 0
-    let t = Math.random() * 10_000
     let glowOn = true
     let particles = buildParticles(isMobile ? 44 : 96)
     const chords = buildChords(nodes)
@@ -63,6 +61,7 @@ export function UniverseCanvas() {
 
     const pointer = { x: 0.5, y: 0.5, active: false }
     let hoverNode: UniNode | null = null
+    let drawnT = 0
 
     function nodePos(n: UniNode, time: number): [number, number] {
       const a = n.phase + time * n.speed
@@ -75,25 +74,30 @@ export function UniverseCanvas() {
       ]
     }
 
+    function pickNode(clientX: number, clientY: number): UniNode | null {
+      const rect = wrap!.getBoundingClientRect()
+      let found: UniNode | null = null
+      let best = 22
+      for (const n of nodes) {
+        const [nx, ny] = nodePos(n, drawnT)
+        const d = Math.hypot(clientX - rect.left - nx, clientY - rect.top - ny)
+        if (d < best) {
+          best = d
+          found = n
+        }
+      }
+      return found
+    }
+
     function onPointerMove(e: PointerEvent) {
       if (reducedMotionRef.current) return
       const rect = wrap!.getBoundingClientRect()
       pointer.x = (e.clientX - rect.left) / rect.width
       pointer.y = (e.clientY - rect.top) / rect.height
       pointer.active = true
-      let found: UniNode | null = null
-      let best = 22
-      for (const n of nodes) {
-        const [nx, ny] = nodePos(n, t)
-        const d = Math.hypot(e.clientX - rect.left - nx, e.clientY - rect.top - ny)
-        if (d < best) {
-          best = d
-          found = n
-        }
-      }
-      hoverNode = found
-      setHover(found ? { repo: found.repo, x: e.clientX - rect.left, y: e.clientY - rect.top } : null)
-      wrap!.style.cursor = found ? 'pointer' : 'default'
+      hoverNode = pickNode(e.clientX, e.clientY)
+      setHover(hoverNode ? { repo: hoverNode.repo, x: e.clientX - rect.left, y: e.clientY - rect.top } : null)
+      wrap!.style.cursor = hoverNode ? 'pointer' : 'default'
     }
 
     function onLeave() {
@@ -102,13 +106,14 @@ export function UniverseCanvas() {
       setHover(null)
     }
 
-    function onClick() {
-      if (hoverNode) navigate(`/repo/${hoverNode.repo.id}`)
+    function onClick(e: MouseEvent) {
+      const n = pickNode(e.clientX, e.clientY)
+      if (n) window.open(githubUrl(n.repo.id), '_blank', 'noopener,noreferrer')
     }
-    const clickRef = { current: onClick }
 
     /* ── draw one frame ── */
     function draw(time: number) {
+      drawnT = time
       ctx!.setTransform(dpr, 0, 0, dpr, 0, 0)
       ctx!.clearRect(0, 0, width, height)
 
@@ -236,7 +241,6 @@ export function UniverseCanvas() {
     let degraded = false
     function loop(now: number) {
       raf = requestAnimationFrame(loop)
-      t = now
       draw(now)
       frames++
       if (now - watchStart > 1600) {
@@ -260,10 +264,10 @@ export function UniverseCanvas() {
       raf = requestAnimationFrame(loop)
       wrap.addEventListener('pointermove', onPointerMove)
       wrap.addEventListener('pointerleave', onLeave)
-      wrap.addEventListener('click', onClick as EventListener)
     } else {
       draw(0)
     }
+    wrap.addEventListener('click', onClick as EventListener)
 
     const onVis = () => {
       if (document.hidden || reducedMotion) {
@@ -282,12 +286,12 @@ export function UniverseCanvas() {
       document.removeEventListener('visibilitychange', onVis)
       wrap.removeEventListener('pointermove', onPointerMove)
       wrap.removeEventListener('pointerleave', onLeave)
-      wrap.removeEventListener('click', clickRef.current as EventListener)
+      wrap.removeEventListener('click', onClick as EventListener)
     }
-  }, [nodes, navigate, reducedMotion])
+  }, [nodes, reducedMotion])
 
   return (
-    <div ref={wrapRef} className="universe" aria-label="Interactive map of curated GitHub repositories">
+    <div ref={wrapRef} className="universe" aria-label="Interactive map of curated GitHub repositories - click a node to open the repo on GitHub">
       <canvas ref={canvasRef} aria-hidden />
       {!isMobile && (
         <div className="universe__hublabel" style={{ left: `${HUB.x * 100}%`, top: `calc(${HUB.y * 100}% + 20px)` }}>
@@ -299,7 +303,7 @@ export function UniverseCanvas() {
         <div className="univ-tip" style={{ left: hover.x, top: hover.y }}>
           <b>{hover.repo.id}</b>
           <span>
-            ★ {formatCompact(hover.repo.stars)} · {hover.repo.language} - click to open
+            ★ {formatCompact(hover.repo.stars)} · {hover.repo.language} - click to visit on GitHub
           </span>
         </div>
       )}
