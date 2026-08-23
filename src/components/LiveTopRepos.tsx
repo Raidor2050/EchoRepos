@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'motion/react'
-import { getRepo } from '../lib/data'
 import { formatCompact } from '../lib/format'
 import { fetchTopRepos, catalogFallback, type LiveRepo } from '../lib/live'
 import { SectionHeading, LanguageDot, StarPill } from './atoms'
@@ -15,23 +13,12 @@ let cache: { at: number; items: LiveRepo[] } | null = null
 const FRESH_MS = 120_000
 
 function LiveCard({ repo }: { repo: LiveRepo }) {
-  const inCatalog = Boolean(getRepo(repo.id))
   return (
     <article className="live-card">
       <h3 className="live-card__title mono">
-        {inCatalog ? (
-          <Link to={`/repo/${repo.id}`}>
-            <span className="live-card__owner">{repo.owner}</span>
-            <span className="live-card__slash">/</span>
-            <span className="live-card__name">{repo.name}</span>
-          </Link>
-        ) : (
-          <>
-            <span className="live-card__owner">{repo.owner}</span>
-            <span className="live-card__slash">/</span>
-            <span className="live-card__name">{repo.name}</span>
-          </>
-        )}
+        <span className="live-card__owner">{repo.owner}</span>
+        <span className="live-card__slash">/</span>
+        <span className="live-card__name">{repo.name}</span>
       </h3>
       <p className="live-card__desc">{repo.desc}</p>
       <div className="live-card__foot">
@@ -40,21 +27,15 @@ function LiveCard({ repo }: { repo: LiveRepo }) {
         <span className="pill pill--dim" title={`${repo.forks.toLocaleString()} forks`}>
           {formatCompact(repo.forks)} forks
         </span>
-        {inCatalog ? (
-          <Link className="live-card__visit" to={`/repo/${repo.id}`}>
-            open in EchoRepos
-          </Link>
-        ) : (
-          <a
-            className="live-card__visit"
-            href={repo.url}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`${repo.id} on GitHub`}
-          >
-            Visit Repo <IconExternal />
-          </a>
-        )}
+        <a
+          className="live-card__visit"
+          href={repo.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`${repo.id} on GitHub`}
+        >
+          Visit Repo <IconExternal />
+        </a>
       </div>
     </article>
   )
