@@ -113,3 +113,7 @@
 .live-skel{height:150px;border-radius:var(--r-lg);border:1px solid var(--glass-border);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:20px}
 .live-skel i{display:block;height:11px;border-radius:6px;background:rgba(255,255,255,.07);animation:skelshift 1.4s ease-in-out infinite}
 @keyframes skelshift{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* ── live section: centralized layout parity with featured ecosystems ── */
+.live-grid--center{max-width:1120px;margin-inline:auto}
+.live-seeall{margin-top:36px;text-align:center}

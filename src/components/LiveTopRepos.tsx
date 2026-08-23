@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'motion/react'
 import { getRepo } from '../lib/data'
 import { formatCompact } from '../lib/format'
 import { fetchTopRepos, catalogFallback, type LiveRepo } from '../lib/live'
 import { SectionHeading, LanguageDot, StarPill } from './atoms'
-import { IconExternal } from './Icons'
+import { IconExternal, IconArrowRight } from './Icons'
 
 /**
  * In-memory only: a hard reload always refetches from the GitHub API,
@@ -87,8 +88,8 @@ export function LiveTopRepos() {
   const shown = status === 'fallback' && items === null ? catalogFallback(8) : items
 
   return (
-    <section className="section live-section" aria-labelledby="live-top-title">
-      <div className="wrap">
+    <section className="section section--tinted" aria-labelledby="live-top-title">
+      <div className="container">
         <div className="live-head">
           <div id="live-top-title" style={{ display: 'contents' }}>
             <SectionHeading
@@ -104,7 +105,7 @@ export function LiveTopRepos() {
         </div>
 
         {shown === null ? (
-          <div className="live-grid" aria-hidden>
+          <div className="live-grid live-grid--center" aria-hidden>
             {Array.from({ length: 8 }, (_, i) => (
               <div className="live-skel" key={i}>
                 <i style={{ width: '58%' }} />
@@ -114,12 +115,31 @@ export function LiveTopRepos() {
             ))}
           </div>
         ) : (
-          <div className="live-grid">
-            {shown.map((r) => (
-              <LiveCard key={r.id} repo={r} />
+          <div className="live-grid live-grid--center">
+            {shown.map((r, i) => (
+              <motion.div
+                key={r.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06, duration: 0.5 }}
+              >
+                <LiveCard repo={r} />
+              </motion.div>
             ))}
           </div>
         )}
+
+        <div className="live-seeall">
+          <a
+            className="btn btn--ghost"
+            href="https://github.com/search?q=stars%3A%3E10000&sort=stars&type=Repositories"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See all top repos on GitHub <IconArrowRight size={15} />
+          </a>
+        </div>
       </div>
     </section>
   )
