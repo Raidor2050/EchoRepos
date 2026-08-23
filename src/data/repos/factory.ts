@@ -18,6 +18,14 @@ const CATEGORY_USECASES: Record<CategoryId, string[]> = {
   creative: ['design-systems', 'games'],
   oss: ['dev-tooling', 'learning'],
   learning: ['learning'],
+  blockchain: ['dev-tooling', 'security-hardening'],
+  systems: ['dev-tooling', 'deploy-infra'],
+  media: ['content-sites', 'desktop-apps'],
+  privacy: ['security-hardening', 'deploy-infra'],
+  knowledge: ['content-sites', 'self-hosted'],
+  hardware: ['automation-scraping', 'games'],
+  science: ['data-pipelines', 'dashboards-viz'],
+  curated: ['learning', 'dev-tooling'],
 }
 
 const DIFF: Record<string, Difficulty> = { b: 'beginner', i: 'intermediate', a: 'advanced' }

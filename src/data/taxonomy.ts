@@ -1,6 +1,6 @@
 import type { Category, CategoryId } from './types'
 
-/** The 16 ecosystems of the EchoRepos universe. Order drives cluster layout. */
+/** The 24 ecosystems of the EchoRepos universe. Order drives cluster layout. */
 export const CATEGORIES: Category[] = [
   { id: 'ai',         label: 'AI & ML',          tagline: 'Models, training and inference',        hue: '#ff6ad5' },
   { id: 'agents',     label: 'AI Agents',        tagline: 'Autonomous & LLM-powered apps',         hue: '#a78bfa' },
@@ -18,6 +18,14 @@ export const CATEGORIES: Category[] = [
   { id: 'creative',   label: 'Creative Coding',  tagline: 'Graphics, motion, visualization',       hue: '#f0abfc' },
   { id: 'oss',        label: 'OSS Core',         tagline: 'Languages & foundational infrastructure', hue: '#94a3b8' },
   { id: 'learning',   label: 'Learning',         tagline: 'Curricula, roadmaps, algorithms',       hue: '#86efac' },
+  { id: 'blockchain', label: 'Crypto & Web3',    tagline: 'Chains, coins and contracts',           hue: '#f7931a' },
+  { id: 'systems',    label: 'OS & Systems',     tagline: 'Kernels, drivers, low level',           hue: '#6366f1' },
+  { id: 'media',      label: 'Media',            tagline: 'Video, music, photos, reading',         hue: '#d946ef' },
+  { id: 'privacy',    label: 'Network & Privacy',tagline: 'Proxies, tunnels, censorship resistance', hue: '#0ea5e9' },
+  { id: 'knowledge',  label: 'Notes & Knowledge',tagline: 'Wikis, journals, second brains',        hue: '#00c9a7' },
+  { id: 'hardware',   label: 'IoT & Hardware',   tagline: 'Boards, robots, connected things',      hue: '#ff8c69' },
+  { id: 'science',    label: 'Science',          tagline: 'Research tools, simulation, physics',   hue: '#7fdbca' },
+  { id: 'curated',    label: 'Awesome Lists',    tagline: 'The definitive lists of everything',    hue: '#ffd166' },
 ]
 
 export const CATEGORY_IDS = CATEGORIES.map((c) => c.id)
@@ -54,6 +62,22 @@ const LANG_HUES: Record<string, string> = {
   Lua: '#51a0cf',
   'Vim Script': '#199f4b',
   Vue: '#41b883',
+  Zig: '#ec915c',
+  Haskell: '#5e5086',
+  Solidity: '#AA6746',
+  Julia: '#a270ba',
+  Nix: '#7e7eff',
+  Perl: '#0298c3',
+  'Objective-C': '#438eff',
+  Assembly: '#6E4C13',
+  Verilog: '#b2b7f8',
+  MDX: '#fcb32c',
+  Astro: '#ff5a03',
+  PowerShell: '#012456',
+  Makefile: '#427819',
+  Dockerfile: '#384d54',
+  Clojure: '#db5855',
+  'Emacs Lisp': '#c065db',
 }
 
 export function langHue(lang: string): string {

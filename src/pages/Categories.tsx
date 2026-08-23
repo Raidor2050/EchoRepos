@@ -18,7 +18,7 @@ export default function Categories() {
       <GridBackdrop />
       <header className="page-head container">
         <SectionHeading
-          eyebrow={`${REPO_COUNT} repos · 16 ecosystems`}
+          eyebrow={`${REPO_COUNT} repos · ${CATEGORIES.length} ecosystems`}
           title="The map of ecosystems"
           sub="Bubble size = curated depth. Pick a sector to explore its best repositories."
         />

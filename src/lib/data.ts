@@ -16,6 +16,9 @@ import { GAMEDEV } from '../data/repos/gamedev'
 import { CREATIVE } from '../data/repos/creative'
 import { OSSCORE } from '../data/repos/osscore'
 import { LEARNING } from '../data/repos/learning'
+import { EXPANSION_A } from '../data/repos/expansion-a'
+import { EXPANSION_B } from '../data/repos/expansion-b'
+import { EXPANSION_C } from '../data/repos/expansion-c'
 
 interface StatsEntry {
   stars?: number
@@ -35,8 +38,7 @@ function applyStats(repo: Repo): Repo {
   }
 }
 
-const SEEDS = [
-  ...WEBDEV,
+const BASE: Repo[] = [...WEBDEV,
   ...FRONTEND,
   ...BACKEND,
   ...AI,
@@ -53,6 +55,13 @@ const SEEDS = [
   ...CREATIVE,
   ...OSSCORE,
   ...LEARNING,
+]
+
+const SEEDS = [
+  ...BASE,
+  ...EXPANSION_A,
+  ...EXPANSION_B,
+  ...EXPANSION_C,
 ].map(applyStats)
 
 /* Integrity guards (fail loudly in dev/test if the dataset is broken). */

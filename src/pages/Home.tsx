@@ -7,11 +7,11 @@ import { CommitChainDiagram, DataStream } from '../components/decor'
 import { IconArrowRight, IconBolt, IconBook, IconSparkle } from '../components/Icons'
 import { SectionHeading } from '../components/atoms'
 import { CATEGORIES } from '../data/taxonomy'
-import { REPO_COUNT } from '../lib/data'
+import { REPOS, REPO_COUNT } from '../lib/data'
 import { formatCompact } from '../lib/format'
 import { usePageMeta } from '../lib/hooks'
 
-const TOTAL_STARS = 3_400_000
+const TOTAL_STARS = REPOS.reduce((n, r) => n + r.stars, 0)
 
 const STEPS = [
   {
@@ -75,7 +75,7 @@ export default function Home() {
           </motion.div>
           <motion.div className="hero__stats" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.8 }}>
             <Stat n={`${REPO_COUNT}`} l="curated repos" />
-            <Stat n="16" l="ecosystems" />
+            <Stat n={`${CATEGORIES.length}`} l="ecosystems" />
             <Stat n={`${formatCompact(TOTAL_STARS)}★`} l="combined stars" />
             <Stat n="12" l="lessons" />
           </motion.div>
@@ -114,7 +114,7 @@ export default function Home() {
       {/* ── featured ecosystems ── */}
       <section className="section section--tinted">
         <div className="container">
-          <SectionHeading eyebrow="start somewhere" title="Five ecosystems worth your time" sub="Or open the full map of all sixteen." />
+          <SectionHeading eyebrow="start somewhere" title="Five ecosystems worth your time" sub="Or open the full map of every ecosystem." />
           <div className="feat-grid">
             {featured.map((id, i) => {
               const cat = CATEGORIES.find((c) => c.id === id)!
@@ -131,7 +131,7 @@ export default function Home() {
           </div>
           <div style={{ textAlign: 'center' }}>
             <Link to="/categories" className="btn btn--ghost">
-              All 16 ecosystems <IconArrowRight size={15} />
+              All {CATEGORIES.length} ecosystems <IconArrowRight size={15} />
             </Link>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # EchoRepos
 
-**Navigate the open source universe** — a cinematic, AMOLED-black interactive site that teaches GitHub fundamentals and surfaces 227 hand-picked open-source repositories across 16 ecosystems.
+**Navigate the open source universe** — a cinematic, AMOLED-black interactive site that teaches GitHub fundamentals and surfaces 727 hand-picked open-source repositories across 24 ecosystems.
 
 Live: https://raidor2050.github.io/EchoRepos/
 
@@ -48,7 +48,7 @@ GitHub Actions deploys every push to `main`: `.github/workflows/deploy.yml` runs
 
 ```
 src/
-  data/            dataset (227 repos), taxonomy, lessons, types
+  data/            dataset (727 repos), taxonomy, lessons, types
   lib/             search engine, quiz recommender, similarity, store, hooks
   components/      universe canvas, command palette, cards, decor systems
   pages/           Home, Explore, Categories, Learn, Quiz, RepoDetail, NotFound

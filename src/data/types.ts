@@ -17,6 +17,14 @@ export type CategoryId =
   | 'creative'
   | 'oss'
   | 'learning'
+  | 'blockchain'
+  | 'systems'
+  | 'media'
+  | 'privacy'
+  | 'knowledge'
+  | 'hardware'
+  | 'science'
+  | 'curated'
 
 export type Difficulty = 'beginner' | 'intermediate' | 'advanced'
 

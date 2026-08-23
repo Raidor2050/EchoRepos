@@ -298,7 +298,7 @@ function Scan({ profile, onDone }: { profile: string; onDone: () => void }) {
   const lines = useMemo(
     () => [
       `> profile: ${profile || 'explorer'}`,
-      '> scanning 227 curated repos…',
+      '> scanning the curated catalog…',
       '> weighting ecosystem fit ×0.26',
       '> weighting capability ×0.22',
       '> weighting priorities ×0.24',

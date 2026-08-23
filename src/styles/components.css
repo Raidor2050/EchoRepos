@@ -385,13 +385,17 @@ a.tag:hover {
 .card-repo__foot {
   display: flex;
   align-items: center;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px 14px;
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px dashed rgba(255, 255, 255, 0.08);
 }
-.card-repo__expand {
+.card-repo__visit {
   margin-left: auto;
+  white-space: nowrap;
+}
+.card-repo__expand {
   color: var(--text-3);
   transition: transform var(--dur-fast) var(--ease-out), color var(--dur-fast);
 }

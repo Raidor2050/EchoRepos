@@ -10,7 +10,7 @@ State: one React context (`src/lib/store.tsx`) holding favorites, learned-lesson
 
 ## Data pipeline
 
-- **Seed layer** — 227 repos written as compact rows (`seed('owner/name', category, [extra], lang, {...})`) across 17 files in `src/data/repos/`. The factory expands defaults: forks ≈ 16% of stars, per-category use-cases, topics.
+- **Seed layer** - 727 repos written as compact rows (`seed('owner/name', category, [extra], lang, {...})`) across 20 files in `src/data/repos/` (17 curated + 3 API-generated expansion batches). The factory expands defaults: forks ≈ 16% of stars, per-category use-cases, topics.
 - **Merge layer** — `src/lib/data.ts` concatenates seeds, then overlays `stats.generated.json` (live stars/forks/pushed_at) when present, and prebuilds indexes (`BY_ID`, language stats, per-category lists).
 - **Refresh** — `scripts/fetch-stats.mjs` hits the GitHub REST API with cached ETags (304-friendly) and requires `GITHUB_TOKEN`.
 
@@ -30,7 +30,7 @@ Diversity pass: greedy selection where each pick minimizes `max(langCount, prima
 
 ## Universe canvas (`src/components/universe/*`)
 
-Deterministic mulberry32 RNG so layout is stable across loads. Clusters = 16 ecosystems on two rings around an "EchoRepos" hub; nodes orbit parametrically with pointer parallax; edges are intra-cluster lattices + quadratic hub spokes + random chords. Glow uses pre-rendered radial-gradient sprites drawn with `lighter` compositing. Adaptive quality: DPR cap 1.75, fps watchdog (sustained <42fps → drop glows + halve particles), visibility + offscreen pause, full static frame under prefers-reduced-motion. Hit-testing is a linear scan (≤150 nodes).
+Deterministic mulberry32 RNG so layout is stable across loads. Clusters = 24 ecosystems on two rings around an "EchoRepos" hub; nodes orbit parametrically with pointer parallax; edges are intra-cluster lattices + quadratic hub spokes + random chords. Glow uses pre-rendered radial-gradient sprites drawn with `lighter` compositing. Adaptive quality: DPR cap 1.75, fps watchdog (sustained <42fps → drop glows + halve particles), visibility + offscreen pause, full static frame under prefers-reduced-motion. Hit-testing is a linear scan (~220 nodes).
 
 ## Styling
 

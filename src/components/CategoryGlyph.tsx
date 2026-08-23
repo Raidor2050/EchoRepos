@@ -132,5 +132,67 @@ export function CategoryGlyph({ id, size = 22 }: { id: CategoryId; size?: number
           <path d="M6.5 11v4.6c0 1.3 2.5 2.6 5.5 2.6s5.5-1.3 5.5-2.6V11" />
         </svg>
       )
+    case 'blockchain':
+      return (
+        <svg {...common}>
+          <rect x="2.8" y="9.2" width="7" height="5.6" rx="1.4" transform="rotate(-25 6.3 12)" />
+          <rect x="14.2" y="9.2" width="7" height="5.6" rx="1.4" transform="rotate(-25 17.7 12)" />
+          <path d="m9.4 13.8 5.2-3.6" />
+        </svg>
+      )
+    case 'systems':
+      return (
+        <svg {...common}>
+          <rect x="6.5" y="6.5" width="11" height="11" rx="1.6" />
+          <path d="M3 9V5.5A1.5 1.5 0 0 1 4.5 4H8M16 4h3.5A1.5 1.5 0 0 1 21 5.5V9M21 15v3.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H4.5A1.5 1.5 0 0 1 3 18.5V15" />
+        </svg>
+      )
+    case 'media':
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8.6" />
+          <path d="M10.2 8.8v6.4l5.4-3.2-5.4-3.2z" fill="currentColor" stroke="none" />
+        </svg>
+      )
+    case 'privacy':
+      return (
+        <svg {...common}>
+          <path d="M3 12s3.5-5.5 9-5.5 9 5.5 9 5.5-3.5 5.5-9 5.5S3 12 3 12z" />
+          <circle cx="12" cy="12" r="2.6" />
+          <path d="m5 19 14-14" />
+        </svg>
+      )
+    case 'knowledge':
+      return (
+        <svg {...common}>
+          <path d="M5 4.5h11a2 2 0 0 1 2 2V20H7a2 2 0 0 1-2-2V4.5z" />
+          <path d="M5 17.5A2.5 2.5 0 0 1 7.5 15H18M9 8.5h5" />
+        </svg>
+      )
+    case 'hardware':
+      return (
+        <svg {...common}>
+          <rect x="8" y="8" width="8" height="8" rx="1.4" />
+          <path d="M10 8V4.5M14 8V4.5M10 19.5V16M14 19.5V16M8 10H4.5M8 14H4.5M19.5 10H16M19.5 14H16" />
+        </svg>
+      )
+    case 'science':
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none" />
+          <ellipse cx="12" cy="12" rx="9" ry="3.6" />
+          <ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(-60 12 12)" />
+        </svg>
+      )
+    case 'curated':
+      return (
+        <svg {...common}>
+          <path d="M4 5.5h.01M8 5.5h12M4 12h.01M8 12h12M4 18.5h.01M8 18.5h12" />
+          <circle cx="4" cy="5.5" r="0.2" fill="currentColor" />
+          <circle cx="4" cy="12" r="0.2" fill="currentColor" />
+          <circle cx="4" cy="18.5" r="0.2" fill="currentColor" />
+        </svg>
+      )
   }
 }

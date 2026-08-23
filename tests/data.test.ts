@@ -54,7 +54,7 @@ describe('dataset integrity', () => {
   })
 
   it('every category holds repos and has unique hues', () => {
-    expect(CATEGORIES.length).toBe(16)
+    expect(CATEGORIES.length).toBe(24)
     expect(new Set(CATEGORIES.map((c) => c.hue)).size).toBe(CATEGORIES.length)
     for (const c of CATEGORIES) {
       expect(REPOS.some((r) => r.category === c.id || r.categories.includes(c.id))).toBe(true)

@@ -53,6 +53,16 @@ export function RepoCard({ repo, showMatch, match, reasons }: {
           {formatCompact(repo.stars)}
         </span>
         <DifficultyMeter level={repo.difficulty} withLabel={false} />
+        <a
+          href={githubUrl(repo.id)}
+          target="_blank"
+          rel="noreferrer"
+          className="btn btn--ghost btn--sm card-repo__visit"
+          onClick={(e) => e.stopPropagation()}
+          aria-label={`Visit ${repo.id} on GitHub`}
+        >
+          Visit Repo <IconExternal size={12} />
+        </a>
         <button
           className={`card-repo__expand${open ? ' is-open' : ''}`}
           onClick={() => setOpen((o) => !o)}
