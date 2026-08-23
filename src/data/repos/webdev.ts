@@ -3,7 +3,7 @@ import { seed } from './factory'
 /** Meta-frameworks, fullstack tooling and content platforms. */
 export const WEBDEV = [
   seed('vercel/next.js', 'webdev', ['frontend', 'backend'], 'JavaScript', {
-    d: 'The React framework for the web — server rendering, file routing, API routes and edge deployment in one toolkit.',
+    d: 'The React framework for the web - server rendering, file routing, API routes and edge deployment in one toolkit.',
     w: 'Industry-leading React fullstack framework',
     t: 'React SSR RSC Edge Turbopack', l: 'TypeScript',
     u: 'web-apps saas content-sites ai-integration', p: 'framework app-template', diff: 'i',
@@ -66,7 +66,7 @@ export const WEBDEV = [
     sig: [84, 92, 88, 90], s: 50000,
   }),
   seed('BuilderIO/qwik', 'webdev', ['frontend'], 'TypeScript', {
-    d: 'Resumable framework that executes almost no JS on load — fine-grained laziness for near-instant interactivity.',
+    d: 'Resumable framework that executes almost no JS on load - fine-grained laziness for near-instant interactivity.',
     w: 'Resumable framework with instant-load performance',
     t: 'Resumability Signals Lazy-hydration',
     u: 'web-apps', p: 'framework', diff: 'a',

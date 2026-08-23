@@ -16,3 +16,11 @@
 - [ ] Run `npm run refresh-stats` with a token to overlay live star counts.
 - [ ] Optional: lazy-route code splitting to shave the ~152KB gzipped bundle.
 - [ ] Optional: sitemap/OG image polish.
+
+## 2026-08-23 - v1.1 polish release
+
+- Lazy routes: every page except Home is React.lazy code-split; vendor chunk split via manualChunks (initial JS now ~140KB gz across vendor+index).
+- Page transitions: AnimatePresence fade/slide between routes, scroll reset on navigation, reduced-motion aware; RouteLoader fallback while chunks load.
+- Full SPA navigation: removed remaining window.location.assign reloads (Categories bubbles, RelatedGraph satellites); footer /learn deep links now smooth-scroll in-app via location.hash.
+- Copy sweep: all em dashes removed from UI copy and comments (~150 lines); en-dash ranges kept.
+- Centered layout: page heads, hero, section headings, lesson/repo headers, step cards, category cards, breadcrumbs, filter pills and footers now center-aligned.

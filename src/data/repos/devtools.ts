@@ -3,21 +3,21 @@ import { seed } from './factory'
 /** Editors, terminals, CLIs, quality tooling and testing. */
 export const DEVTOOLS = [
   seed('microsoft/vscode', 'devtools', [], 'TypeScript', {
-    d: "The world's most popular code editor — extensions, integrated terminal, debugging and remote development.",
+    d: "The world's most popular code editor - extensions, integrated terminal, debugging and remote development.",
     w: "World's most popular code editor",
     t: 'Extensions LSP Debugging Remote',
     u: 'dev-tooling learning', p: 'tool', diff: 'b',
     sig: [97, 96, 97, 84], s: 165000, topics: 'editor extensions ide',
   }),
   seed('git/git', 'devtools', ['oss'], 'C', {
-    d: 'The distributed version control system itself — the foundation every repository in this catalog stands on.',
+    d: 'The distributed version control system itself - the foundation every repository in this catalog stands on.',
     w: 'The version control system itself',
     t: 'VCS Distributed Branching Plumbing',
     u: 'dev-tooling learning', p: 'tool', diff: 'a',
     sig: [92, 90, 100, 62], s: 54000,
   }),
   seed('vim/vim', 'devtools', [], 'Vim Script', {
-    d: 'Ubiquitous modal editor available everywhere — decades of muscle memory in a single binary.',
+    d: 'Ubiquitous modal editor available everywhere - decades of muscle memory in a single binary.',
     w: 'Ubiquitous modal editor available everywhere',
     t: 'Modal-editing Macros Portable Motions',
     u: 'dev-tooling', p: 'tool', diff: 'i',
@@ -53,7 +53,7 @@ export const DEVTOOLS = [
     sig: [80, 88, 92, 86], s: 48000,
   }),
   seed('junegunn/fzf', 'devtools', [], 'Go', {
-    d: 'General-purpose command-line fuzzy finder — pipe anything into it and pick results interactively.',
+    d: 'General-purpose command-line fuzzy finder - pipe anything into it and pick results interactively.',
     w: 'General-purpose command-line fuzzy finder',
     t: 'Fuzzy-finder Interactive Filter Vim-integration',
     u: 'dev-tooling cli', p: 'cli tool', diff: 'b',
@@ -67,7 +67,7 @@ export const DEVTOOLS = [
     sig: [84, 76, 97, 86], s: 51000,
   }),
   seed('sharkdp/fd', 'devtools', [], 'Rust', {
-    d: 'Simple, fast and friendly alternative to find — sane syntax, colorized output and smart defaults.',
+    d: 'Simple, fast and friendly alternative to find - sane syntax, colorized output and smart defaults.',
     w: 'Simple fast user-friendly find alternative',
     t: 'Find Alternative Colorized Parallel',
     u: 'dev-tooling cli', p: 'cli tool', diff: 'b',
@@ -102,14 +102,14 @@ export const DEVTOOLS = [
     sig: [86, 88, 94, 76], s: 97000,
   }),
   seed('prettier/prettier', 'devtools', [], 'JavaScript', {
-    d: 'Opinionated automatic formatter for JS/TS/CSS/JSON/YAML and friends — end style debates forever.',
+    d: 'Opinionated automatic formatter for JS/TS/CSS/JSON/YAML and friends - end style debates forever.',
     w: 'Opinionated automatic multi-language formatter',
     t: 'Formatter AST Consistent Editor-plugin',
     u: 'dev-tooling', p: 'tool', diff: 'b',
     sig: [82, 78, 97, 88], s: 50000, alt: 'astral-sh/ruff biomejs/biome',
   }),
   seed('eslint/eslint', 'devtools', [], 'TypeScript', {
-    d: 'The pluggable JavaScript linting utility — catch bugs and enforce conventions via AST rules.',
+    d: 'The pluggable JavaScript linting utility - catch bugs and enforce conventions via AST rules.',
     w: 'Pluggable JavaScript linting utility',
     t: 'Linter AST Rules Plugins Flat-config',
     u: 'dev-tooling', p: 'tool', diff: 'b',
@@ -137,7 +137,7 @@ export const DEVTOOLS = [
     sig: [80, 99, 94, 90], s: 37000, alt: 'prettier/prettier',
   }),
   seed('astral-sh/uv', 'devtools', [], 'Rust', {
-    d: 'An extremely fast Python package manager and resolver — pip, venv and pip-tools in one drop-in tool.',
+    d: 'An extremely fast Python package manager and resolver - pip, venv and pip-tools in one drop-in tool.',
     w: 'Extremely fast Python package manager',
     t: 'Resolver Lockfile Venv Cache Universal',
     u: 'dev-tooling data-pipelines', p: 'cli tool', diff: 'b',

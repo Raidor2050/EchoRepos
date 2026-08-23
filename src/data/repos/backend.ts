@@ -3,7 +3,7 @@ import { seed } from './factory'
 /** Server frameworks and API layers across the language spectrum. */
 export const BACKEND = [
   seed('expressjs/express', 'backend', [], 'JavaScript', {
-    d: 'The classic minimal Node.js web framework — routing, middleware and an ecosystem two decades deep.',
+    d: 'The classic minimal Node.js web framework - routing, middleware and an ecosystem two decades deep.',
     w: 'Classic minimal Node.js web framework',
     t: 'Routing Middleware REST Node',
     u: 'apis web-apps', p: 'framework', diff: 'b',
@@ -31,7 +31,7 @@ export const BACKEND = [
     sig: [90, 90, 97, 94], s: 82000, alt: 'pallets/flask fastapi/fastapi',
   }),
   seed('pallets/flask', 'backend', ['learning'], 'Python', {
-    d: 'The simple, extensible Python microframework — a small core and a universe of extensions.',
+    d: 'The simple, extensible Python microframework - a small core and a universe of extensions.',
     w: 'Simple extensible Python microframework',
     t: 'WSGI Jinja Blueprints Extensions',
     u: 'apis web-apps learning', p: 'framework', diff: 'b',
@@ -116,7 +116,7 @@ export const BACKEND = [
     sig: [80, 92, 84, 88], s: 45000, f: 2400, alt: 'appwrite/appwrite supabase/supabase',
   }),
   seed('trpc/trpc', 'backend', ['frontend'], 'TypeScript', {
-    d: 'End-to-end typesafe APIs without schemas or codegen — infer server types directly in your client.',
+    d: 'End-to-end typesafe APIs without schemas or codegen - infer server types directly in your client.',
     w: 'End-to-end typesafe API layer',
     t: 'RPC Inference Typesafe Fullstack',
     u: 'apis saas web-apps', p: 'library', diff: 'i',

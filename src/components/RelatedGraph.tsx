@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'motion/react'
 import type { Repo } from '../data/types'
 import { getCategory } from '../data/taxonomy'
@@ -6,14 +6,19 @@ import { formatCompact } from '../lib/format'
 
 /**
  * Radial constellation of related repositories (SVG, hand-rolled).
- * Center node + spokes to related repos; nodes are links.
+ * Center node + spokes to related repos; nodes navigate client-side.
  */
 export function RelatedGraph({ center, related }: { center: Repo; related: Array<{ repo: Repo; score: number }> }) {
+  const navigate = useNavigate()
   const size = 460
   const cx = size / 2
   const cy = size / 2
   const R = 168
   const centerHue = getCategory(center.category).hue
+
+  function open(id: string) {
+    navigate(`/repo/${id}`)
+  }
 
   return (
     <motion.svg
@@ -61,7 +66,7 @@ export function RelatedGraph({ center, related }: { center: Repo; related: Array
       {/* center node */}
       <circle cx={cx} cy={cy} r={13} fill="#000" stroke={centerHue} strokeWidth="2.4" />
       <circle cx={cx} cy={cy} r={4.5} fill={centerHue} />
-      <text x={cx} y={cy - 24} textAnchor="middle" fontSize="12.5" fontWeight="600" fill="var(--text-1)" fontFamily="var(--font-display)">
+      <text x={cx} y={cy - 24} textAnchor="middle" fontSize="12.5" fontWeight="600" fill="#e8eef6" fontFamily="'Space Grotesk', sans-serif">
         {center.name}
       </text>
 
@@ -74,10 +79,9 @@ export function RelatedGraph({ center, related }: { center: Repo; related: Array
         const label = r.repo.name
         const flip = Math.cos(a) < 0
         return (
-          <g key={r.repo.id}>
-            <Link to={`/repo/${r.repo.id}`}>
-              <circle cx={x} cy={y} r={16} fill="transparent" />
-            </Link>
+          <g key={r.repo.id} onClick={() => open(r.repo.id)} style={{ cursor: 'pointer' }}>
+            <title>{`${r.repo.id} · ★ ${formatCompact(r.repo.stars)}`}</title>
+            <circle cx={x} cy={y} r={20} fill="transparent" />
             <motion.circle
               cx={x}
               cy={y}
@@ -90,17 +94,14 @@ export function RelatedGraph({ center, related }: { center: Repo; related: Array
               viewport={{ once: true }}
               transition={{ delay: 0.15 + i * 0.07, type: 'spring', stiffness: 220, damping: 14 }}
               style={{ transformOrigin: `${x}px ${y}px`, cursor: 'pointer' }}
-              onClick={() => window.location.assign(`#/repo/${r.repo.id}`)}
             />
             <text
               x={x + (flip ? -14 : 14)}
               y={y + 4}
               textAnchor={flip ? 'end' : 'start'}
               fontSize="11"
-              fill="var(--text-2)"
-              fontFamily="var(--font-mono)"
-              style={{ cursor: 'pointer' }}
-              onClick={() => window.location.assign(`#/repo/${r.repo.id}`)}
+              fill="#aeb9c8"
+              fontFamily="ui-monospace, monospace"
             >
               {label.length > 16 ? `${label.slice(0, 15)}…` : label}
             </text>
@@ -108,19 +109,5 @@ export function RelatedGraph({ center, related }: { center: Repo; related: Array
         )
       })}
     </motion.svg>
-  )
-}
-
-export function RelatedList({ center, related }: { center: Repo; related: Array<{ repo: Repo; score: number }> }) {
-  void center
-  if (related.length === 0) return null
-  return (
-    <div className="related-list">
-      {related.slice(0, 4).map(({ repo }) => (
-        <Link key={repo.id} to={`/repo/${repo.id}`} className="pill">
-          {repo.name} · ★ {formatCompact(repo.stars)}
-        </Link>
-      ))}
-    </div>
   )
 }

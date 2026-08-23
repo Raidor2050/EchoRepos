@@ -11,14 +11,14 @@ export const AUTOMATION = [
     alt: 'activepieces/activepieces node-red/node-red',
   }),
   seed('huginn/huginn', 'automation', [], 'Ruby', {
-    d: 'Build agents that monitor the web and act on your behalf — the original personal automation engine.',
+    d: 'Build agents that monitor the web and act on your behalf - the original personal automation engine.',
     w: 'Build agents monitoring and acting on web',
     t: 'Agents Events Triggers Scraping Website-agents',
     u: 'automation-scraping data-pipelines', p: 'self-hosted', diff: 'i',
     sig: [70, 42, 78, 80], s: 46000, up: '2025-10',
   }),
   seed('node-red/node-red', 'automation', ['devops'], 'JavaScript', {
-    d: 'Flow-based wiring of hardware devices, APIs and services with a browser editor — IoT classic.',
+    d: 'Flow-based wiring of hardware devices, APIs and services with a browser editor - IoT classic.',
     w: 'Flow-based wiring for IoT and integration',
     t: 'Flows Nodes Dashboard MQTT Browser-editor',
     u: 'automation-scraping deploy-infra realtime-chat', p: 'self-hosted tool', diff: 'b',
@@ -46,7 +46,7 @@ export const AUTOMATION = [
     sig: [68, 94, 94, 76], s: 15000, f: 1300,
   }),
   seed('windmill-labs/windmill', 'automation', ['devtools'], 'TypeScript', {
-    d: 'Turn scripts into workflows, internal apps and UIs — fast multi-language developer platform.',
+    d: 'Turn scripts into workflows, internal apps and UIs - fast multi-language developer platform.',
     w: 'Turn scripts into workflows and UIs',
     t: 'Scripts Flows Internal-apps Schedule Deno', l: 'Svelte Go Python',
     u: 'automation-scraping dev-tooling dashboards-viz', p: 'self-hosted app-template', diff: 'i',

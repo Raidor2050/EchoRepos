@@ -39,7 +39,7 @@ export function useOnKey(key: string | string[], handler: (e: KeyboardEvent) => 
 /** Document title + meta description per route. */
 export function usePageMeta(title: string, description?: string): void {
   useEffect(() => {
-    document.title = `${title} — EchoRepos`
+    document.title = `${title} - EchoRepos`
     if (description) {
       let tag = document.querySelector<HTMLMetaElement>('meta[name="description"]')
       if (!tag) {

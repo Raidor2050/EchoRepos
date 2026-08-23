@@ -22,7 +22,7 @@ type Answers = QuizAnswers
 const TECHS = ['any', 'TypeScript', 'JavaScript', 'Python', 'Rust', 'Go', 'Java', 'Kotlin', 'Swift', 'C++', 'C#', 'Ruby']
 
 const CAPABILITIES: Array<{ id?: string; label: string }> = [
-  { label: 'Not sure yet — show the essentials' },
+  { label: 'Not sure yet - show the essentials' },
   { id: 'auth-payments', label: 'Logins & payments' },
   { id: 'data-storage', label: 'Databases & storage' },
   { id: 'ai-integration', label: 'Add AI features' },
@@ -55,7 +55,7 @@ const REPO_TYPES: Array<{ v: ProjectType | 'any'; label: string }> = [
 const STEP_COUNT = 7
 
 export default function Quiz() {
-  usePageMeta('Find your repositories — EchoRepos quiz')
+  usePageMeta('Find your repositories - EchoRepos quiz')
   const { quiz, setQuiz } = useApp()
   const [step, setStep] = useState(0)
   const [phase, setPhase] = useState<'quiz' | 'scan' | 'results'>(

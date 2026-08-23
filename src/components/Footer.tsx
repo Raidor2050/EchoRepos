@@ -14,7 +14,7 @@ export function Footer() {
           </Link>
           <p className="footer__note">
             The best of GitHub, organized for humans. A curated map of the open-source
-            universe — learn the landscape, find your stack, start building.
+            universe - learn the landscape, find your stack, start building.
           </p>
         </div>
         <div>
@@ -42,7 +42,7 @@ export function Footer() {
         </div>
       </div>
       <div className="footer__base">
-        <span>© {new Date().getFullYear()} EchoRepos — Discover. Learn. Build.</span>
+        <span>© {new Date().getFullYear()} EchoRepos - Discover. Learn. Build.</span>
         <span>
           Unofficial fan-made index · not affiliated with GitHub · stats are curated snapshots,
           refreshable via the data pipeline

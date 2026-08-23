@@ -69,7 +69,7 @@ interface Intent {
   production?: boolean
 }
 
-/** Natural-language intent table — additive boosts, never hard filters. */
+/** Natural-language intent table - additive boosts, never hard filters. */
 const INTENTS: Intent[] = [
   { id: 'beginner', label: 'Beginner-friendly picks', test: /\b(beginner|newbie|new to|start|starter|learn|easy|simple)\b/, beginner: true },
   { id: 'saas', label: 'SaaS building blocks', test: /\b(saas|startup|subscription|billing)\b/, cats: ['webdev', 'backend', 'frontend'], ucs: ['auth-payments', 'data-storage'] },
@@ -219,7 +219,7 @@ export function runSearch(query: string): ScoredRepo[] {
     if (strict.length > 0) {
       out = strict
     } else if (intents.length > 0) {
-      /* no literal token hit — fall back to intent-relevant slices */
+      /* no literal token hit - fall back to intent-relevant slices */
       out = out.filter((r) =>
         intents.some(
           (it) =>

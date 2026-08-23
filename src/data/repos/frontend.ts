@@ -32,21 +32,21 @@ export const FRONTEND = [
     sig: [90, 91, 88, 93], s: 83000, alt: 'vuejs/vue solidjs/solid facebook/react',
   }),
   seed('preactjs/preact', 'frontend', [], 'JavaScript', {
-    d: 'A fast 3kB alternative to React with the same modern API — ideal for widgets, embeds and tight performance budgets.',
+    d: 'A fast 3kB alternative to React with the same modern API - ideal for widgets, embeds and tight performance budgets.',
     w: 'Fast 3kB alternative to React',
     t: '3kB Hooks Compatible HTM',
     u: 'web-apps', p: 'library', diff: 'b',
     sig: [76, 70, 90, 82], s: 37000, alt: 'facebook/react solidjs/solid',
   }),
   seed('solidjs/solid', 'frontend', [], 'JavaScript', {
-    d: 'Fine-grained reactive UI with JSX and signals — no virtual DOM, no re-render tax, outstanding raw performance.',
+    d: 'Fine-grained reactive UI with JSX and signals - no virtual DOM, no re-render tax, outstanding raw performance.',
     w: 'Fine-grained reactive UI without virtual DOM',
     t: 'Signals JSX Fine-grained',
     u: 'web-apps', p: 'framework library', diff: 'a',
     sig: [72, 80, 76, 78], s: 33000, alt: 'sveltejs/svelte facebook/react',
   }),
   seed('alpinejs/alpine', 'frontend', [], 'JavaScript', {
-    d: 'Sprinkle declarative behavior straight into HTML — reactive dropdowns, tabs and toggles with no build step.',
+    d: 'Sprinkle declarative behavior straight into HTML - reactive dropdowns, tabs and toggles with no build step.',
     w: 'Lightweight declarative behavior sprinkled into HTML',
     t: 'Directives No-build Sprinkles',
     u: 'web-apps content-sites', p: 'library', diff: 'b',
@@ -67,7 +67,7 @@ export const FRONTEND = [
     sig: [82, 72, 94, 84], s: 61000, alt: 'pmndrs/zustand TanStack/query',
   }),
   seed('pmndrs/zustand', 'frontend', [], 'TypeScript', {
-    d: 'Tiny, unopinionated hook-based state management — one function, no providers, superb React ergonomics.',
+    d: 'Tiny, unopinionated hook-based state management - one function, no providers, superb React ergonomics.',
     w: 'Tiny ergonomic hook-based state management',
     t: 'Hooks Minimal Middleware Immer',
     u: 'web-apps mobile-apps', p: 'library', diff: 'b',
@@ -88,7 +88,7 @@ export const FRONTEND = [
     sig: [90, 86, 92, 86], s: 86000,
   }),
   seed('shadcn-ui/ui', 'frontend', ['creative'], 'TypeScript', {
-    d: 'Beautifully designed components built with Radix UI and Tailwind CSS — copied into your repo, owned by you.',
+    d: 'Beautifully designed components built with Radix UI and Tailwind CSS - copied into your repo, owned by you.',
     w: 'Beautifully designed components you own entirely',
     t: 'Radix Tailwind Copy-paste CLI',
     u: 'design-systems web-apps saas', p: 'app-template library', diff: 'b',
@@ -102,7 +102,7 @@ export const FRONTEND = [
     sig: [89, 88, 95, 80], s: 93000, alt: 'shadcn-ui/ui chakra-ui/chakra mui/material-ui',
   }),
   seed('chakra-ui/chakra', 'frontend', [], 'TypeScript', {
-    d: 'Accessible React component library with a styled-system API — build consistent, themeable UI fast.',
+    d: 'Accessible React component library with a styled-system API - build consistent, themeable UI fast.',
     w: 'Accessible component library with styling system',
     t: 'Accessibility Styled-system Theming',
     u: 'design-systems web-apps', p: 'library', diff: 'b',

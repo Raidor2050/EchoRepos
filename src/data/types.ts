@@ -31,18 +31,18 @@ export type ProjectType =
   | 'engine'
 
 export interface RepoSignals {
-  /** 0–100 — adoption / stars percentile within the catalog */
+  /** 0–100 - adoption / stars percentile within the catalog */
   popularity: number
-  /** 0–100 — recent commit cadence & release velocity */
+  /** 0–100 - recent commit cadence & release velocity */
   activity: number
-  /** 0–100 — battle-tested readiness for production use */
+  /** 0–100 - battle-tested readiness for production use */
   production: number
-  /** 0–100 — educational value: docs quality, readability, guided ramp */
+  /** 0–100 - educational value: docs quality, readability, guided ramp */
   learning: number
 }
 
 export interface Repo {
-  /** "owner/name" — stable unique id */
+  /** "owner/name" - stable unique id */
   id: string
   name: string
   owner: string

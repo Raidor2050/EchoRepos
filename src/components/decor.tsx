@@ -1,5 +1,5 @@
 /**
- * Animated SVG environment systems — reusable decorative backdrops.
+ * Animated SVG environment systems - reusable decorative backdrops.
  * All motion is CSS-driven and disabled under prefers-reduced-motion.
  */
 

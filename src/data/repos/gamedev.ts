@@ -3,7 +3,7 @@ import { seed } from './factory'
 /** Game engines and HTML5 game frameworks. */
 export const GAMEDEV = [
   seed('godotengine/godot', 'gamedev', ['creative', 'oss'], 'C++', {
-    d: 'Fully-featured open-source game engine for 2D and 3D — scene nodes, GDScript, and zero royalties.',
+    d: 'Fully-featured open-source game engine for 2D and 3D - scene nodes, GDScript, and zero royalties.',
     w: 'Fully-featured open-source game engine',
     t: 'GDScript Scene-nodes Physics Shaders Editor',
     u: 'games creative mobile-apps desktop-apps', p: 'engine tool', diff: 'i',
@@ -19,7 +19,7 @@ export const GAMEDEV = [
     sig: [74, 80, 90, 90], s: 37000,
   }),
   seed('pixijs/pixijs', 'gamedev', ['creative'], 'TypeScript', {
-    d: 'The fastest 2D WebGL/WebGPU renderer — used for games, ads, dataviz and interactive experiences.',
+    d: 'The fastest 2D WebGL/WebGPU renderer - used for games, ads, dataviz and interactive experiences.',
     w: 'Fastest 2D WebGL/WebGPU renderer',
     t: 'Webgl Webgpu Batching Filters Mesh Sprites',
     u: 'games design-systems dashboards-viz', p: 'library engine', diff: 'i',
@@ -47,7 +47,7 @@ export const GAMEDEV = [
     sig: [66, 85, 90, 82], s: 12000, f: 1500,
   }),
   seed('Unity-Technologies/UnityCsReference', 'gamedev', ['learning'], 'C#', {
-    d: 'Reference source of Unity engine C# internals — an extraordinary codebase to read and learn from.',
+    d: 'Reference source of Unity engine C# internals - an extraordinary codebase to read and learn from.',
     w: 'Reference source of Unity engine internals',
     t: 'Engine-internals Reading Learning Csharp',
     u: 'learning games dev-tooling', p: 'course', diff: 'a',

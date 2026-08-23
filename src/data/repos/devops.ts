@@ -17,7 +17,7 @@ export const DEVOPS = [
     sig: [88, 90, 97, 70], s: 69000,
   }),
   seed('containerd/containerd', 'devops', ['oss'], 'Go', {
-    d: 'Industry-standard core container runtime — Kubernetes default, OCI-compliant and embeddable.',
+    d: 'Industry-standard core container runtime - Kubernetes default, OCI-compliant and embeddable.',
     w: 'Industry-standard core container runtime',
     t: 'Container-runtime OCI Snapshots CRI',
     u: 'deploy-infra', p: 'engine', diff: 'a',
@@ -31,7 +31,7 @@ export const DEVOPS = [
     sig: [76, 90, 96, 84], s: 28000,
   }),
   seed('ansible/ansible', 'devops', ['automation'], 'Python', {
-    d: 'Agentless IT automation via human-readable YAML playbooks — provisioning, config and deployment.',
+    d: 'Agentless IT automation via human-readable YAML playbooks - provisioning, config and deployment.',
     w: 'Agentless automation via human-readable playbooks',
     t: 'Playbooks Idempotent Modules SSH Inventory',
     u: 'deploy-infra automation-scraping security-hardening', p: 'tool cli', diff: 'b',
@@ -59,7 +59,7 @@ export const DEVOPS = [
     sig: [86, 92, 98, 74], s: 58000, alt: 'grafana/mimir influxdata/influxdb',
   }),
   seed('grafana/grafana', 'devops', ['datasci'], 'TypeScript', {
-    d: 'Leading observability dashboard platform — visualize metrics, logs and traces from any datasource.',
+    d: 'Leading observability dashboard platform - visualize metrics, logs and traces from any datasource.',
     w: 'Leading observability dashboard platform',
     t: 'Dashboards Panels Plugins Loki Alerting', l: 'Go',
     u: 'dashboards-viz deploy-infra dashboards', p: 'self-hosted app-template', diff: 'b',
@@ -73,7 +73,7 @@ export const DEVOPS = [
     sig: [70, 88, 94, 72], s: 21000,
   }),
   seed('argoproj/argo-cd', 'devops', [], 'Go', {
-    d: 'Declarative GitOps continuous delivery controller for Kubernetes — Git as the source of truth.',
+    d: 'Declarative GitOps continuous delivery controller for Kubernetes - Git as the source of truth.',
     w: 'Declarative GitOps continuous delivery controller',
     t: 'Gitops Declarative Sync Drift-detection RBAC',
     u: 'deploy-infra automation-scraping', p: 'self-hosted', diff: 'i',
@@ -95,7 +95,7 @@ export const DEVOPS = [
     sig: [64, 95, 82, 82], s: 13000, f: 900,
   }),
   seed('drone/drone', 'devops', [], 'Go', {
-    d: 'Container-native continuous integration platform — every build step runs inside a Docker container.',
+    d: 'Container-native continuous integration platform - every build step runs inside a Docker container.',
     w: 'Container-native continuous integration platform',
     t: 'CI Containers Pipelines Self-hosted Plugins',
     u: 'deploy-infra dev-tooling', p: 'self-hosted tool', diff: 'i',
@@ -137,7 +137,7 @@ export const DEVOPS = [
     sig: [78, 92, 96, 90], s: 35000,
   }),
   seed('k3s-io/k3s', 'devops', [], 'Go', {
-    d: 'Lightweight Kubernetes perfect for edge, IoT and CI — fully conformant in a single binary under 100MB.',
+    d: 'Lightweight Kubernetes perfect for edge, IoT and CI - fully conformant in a single binary under 100MB.',
     w: 'Lightweight Kubernetes perfect for edge computing',
     t: 'Lightweight-k8s Edge Single-binary Embedded-etcd',
     u: 'deploy-infra', p: 'engine self-hosted', diff: 'i',

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { CategoryGlyph } from '../components/CategoryGlyph'
 import { GridBackdrop } from '../components/decor'
@@ -9,7 +9,8 @@ import { formatCompact } from '../lib/format'
 import { usePageMeta } from '../lib/hooks'
 
 export default function Categories() {
-  usePageMeta('Ecosystems — EchoRepos')
+  usePageMeta('Ecosystems: EchoRepos')
+  const navigate = useNavigate()
   const max = Math.max(...CATEGORIES.map((c) => categoryCount(c.id)))
 
   return (
@@ -41,7 +42,7 @@ export default function Categories() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05, type: 'spring', stiffness: 160, damping: 16 }}
                 style={{ transformOrigin: `${cx}px ${cy}px`, cursor: 'pointer' }}
-                onClick={() => window.location.assign(`#/explore?cat=${c.id}`)}
+                onClick={() => navigate(`/explore?cat=${c.id}`)}
               >
                 <circle cx={cx} cy={cy} r={r + 10} fill={`${c.hue}0d`} stroke={c.hue} strokeOpacity="0.25" />
                 <circle cx={cx} cy={cy} r={r} fill={`${c.hue}1f`} stroke={c.hue} strokeWidth="1.4" className="bubble" style={{ '--cat-c': c.hue } as React.CSSProperties} />

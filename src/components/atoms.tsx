@@ -141,23 +141,24 @@ export function SectionHeading({
   eyebrow,
   title,
   sub,
-  align,
+  align = 'center',
 }: {
   eyebrow: string
   title: string
   sub?: string
   align?: 'center' | 'start'
 }) {
+  const centered = align === 'center'
   return (
     <motion.div
       className="section-heading"
-      style={align === 'center' ? { textAlign: 'center', width: '100%' } : undefined}
+      style={centered ? { textAlign: 'center', width: '100%' } : undefined}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     >
-      <span className="eyebrow">{align === 'center' ? <><span className="eyebrow__dot" /> {eyebrow}</> : eyebrow}</span>
+      <span className="eyebrow">{centered ? <><span className="eyebrow__dot" /> {eyebrow}</> : eyebrow}</span>
       <h2>{title}</h2>
       {sub && <p>{sub}</p>}
     </motion.div>

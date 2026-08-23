@@ -28,7 +28,7 @@ export default function RepoDetail() {
 }
 
 function DetailBody({ repo }: { repo: NonNullable<ReturnType<typeof getRepo>> }) {
-  usePageMeta(`${repo.id} — EchoRepos`)
+  usePageMeta(`${repo.id} - EchoRepos`)
   const { favorites, toggleFavorite } = useApp()
   const cat = getCategory(repo.category)
   const related = similarRepos(repo.id, 6)
@@ -69,7 +69,7 @@ function DetailBody({ repo }: { repo: NonNullable<ReturnType<typeof getRepo>> })
           <span className="pill">updated {formatMonth(repo.updated)}</span>
         </div>
 
-        <div style={{ display: 'flex', gap: 10, marginTop: 18 }}>
+        <div style={{ display: 'flex', gap: 10, marginTop: 18, justifyContent: 'center' }}>
           <a className="btn btn--primary" href={githubUrl(repo.id)} target="_blank" rel="noreferrer">
             Open on GitHub <IconExternal size={15} />
           </a>
@@ -175,7 +175,7 @@ function SignalBar({ label, v, hue, note }: { label: string; v: number; hue: str
     >
       <header>
         <b>{label}</b>
-        <span className="mono-note">{v}/100 — {note}</span>
+        <span className="mono-note">{v}/100 - {note}</span>
       </header>
       <div className="signal__track">
         <motion.i

@@ -64,6 +64,6 @@ export function saveStore<T>(key: string, payload: T): void {
     const env: Envelope<T> = { v: VERSION, savedAt: new Date().toISOString(), payload }
     localStorage.setItem(key, JSON.stringify(env))
   } catch {
-    /* storage full/unavailable — non-fatal */
+    /* storage full/unavailable - non-fatal */
   }
 }

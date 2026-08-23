@@ -22,7 +22,7 @@ function filtersFromParams(p: URLSearchParams): SearchFilters {
 }
 
 export default function Explore() {
-  usePageMeta('Explore repositories — EchoRepos')
+  usePageMeta('Explore repositories - EchoRepos')
   const [params, setParams] = useSearchParams()
   const filters = useMemo(() => filtersFromParams(params), [params])
   const sort = (params.get('sort') as SortKey) ?? 'best'

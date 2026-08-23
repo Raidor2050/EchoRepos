@@ -119,9 +119,9 @@ function dimensions(a: QuizAnswers): DimSpec[] {
           case 'simplicity': return r.difficulty === 'beginner' ? 'Gentle setup, guided docs' : 'Approachable codebase'
           case 'performance': return 'Engineered for raw speed'
           case 'production': return `Battle-tested readiness (${r.signals.production}/100)`
-          case 'learning': return 'High learning value — great docs & structure'
+          case 'learning': return 'High learning value - great docs & structure'
           case 'community': return `${formatCompact(r.stars)}★ community favorite`
-          default: return `${formatCompact(r.stars)}★ — widely adopted`
+          default: return `${formatCompact(r.stars)}★ - widely adopted`
         }
       },
     },
@@ -195,7 +195,7 @@ export function recommend(a: QuizAnswers, limit = 8): ScoredRepo[] {
       if (!c.text || reasons.includes(c.text)) continue
       reasons.push(c.text)
     }
-    if (reasons.length === 0 && repo.stars > 50_000) reasons.push(`${formatCompact(repo.stars)}★ — industry standard`)
+    if (reasons.length === 0 && repo.stars > 50_000) reasons.push(`${formatCompact(repo.stars)}★ - industry standard`)
 
     const match = Math.round(Math.min(97, Math.max(38, 38 + 58 * Math.pow(raw, 0.92))))
     return { repo, match, reasons }

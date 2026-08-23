@@ -17,7 +17,7 @@ export const SELFHOSTED = [
     sig: [74, 96, 90, 82], s: 26000,
   }),
   seed('changedetection.io/changedetection.io', 'automation', [], 'Python', {
-    d: 'Website change monitoring with alerts — price drops, restocks, defacements and diffs.',
+    d: 'Website change monitoring with alerts - price drops, restocks, defacements and diffs.',
     w: 'Website change monitoring with alerts',
     t: 'Diff-watch Visual-diff Playwright Re-stock Alerts',
     l: 'HTML',
@@ -32,7 +32,7 @@ export const SELFHOSTED = [
     sig: [84, 99, 88, 80], s: 70000,
   }),
   seed('blakeblackshear/frigate', 'automation', ['ai'], 'Python', {
-    d: 'Real-time AI object detection NVR for security cameras — local, fast and Home-Assistant friendly.',
+    d: 'Real-time AI object detection NVR for security cameras - local, fast and Home-Assistant friendly.',
     w: 'Real-time AI object detection NVR',
     t: 'NVR Object-detection Coral Tensorrt Mqtt',
     u: 'security-hardening ai-integration automation-scraping', p: 'self-hosted', diff: 'i',

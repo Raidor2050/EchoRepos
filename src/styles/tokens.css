@@ -1,6 +1,6 @@
 /* ── EchoRepos Design Tokens ─────────────────────────────────────────── */
 :root {
-  /* Foundations — true AMOLED black */
+  /* Foundations: true AMOLED black */
   --bg-0: #000000;
   --bg-1: #04070c;
   --bg-2: #090e16;

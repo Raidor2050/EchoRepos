@@ -10,7 +10,7 @@ export const DATABASES = [
     sig: [88, 94, 100, 70], s: 17000, f: 4800, topics: 'sql rdbms acid', alt: 'mysql/mysql-server cockroachdb/cockroach',
   }),
   seed('mysql/mysql-server', 'databases', [], 'C++', {
-    d: "The world's most widely deployed open-source database — ACID transactions and battle-tested replication.",
+    d: "The world's most widely deployed open-source database - ACID transactions and battle-tested replication.",
     w: "World's most widely deployed database",
     t: 'RDBMS InnoDB Replication Group-replication',
     u: 'data-storage', p: 'engine', diff: 'a',
@@ -38,7 +38,7 @@ export const DATABASES = [
     sig: [80, 96, 96, 66], s: 39000,
   }),
   seed('duckdb/duckdb', 'databases', ['datasci'], 'C++', {
-    d: 'Embedded analytical SQL powerhouse — like SQLite but for OLAP; query Parquet/CSV in-process.',
+    d: 'Embedded analytical SQL powerhouse - like SQLite but for OLAP; query Parquet/CSV in-process.',
     w: 'Embedded analytical SQL powerhouse',
     t: 'In-process OLAP Parquet Extensions Arrow',
     u: 'data-storage dashboards-viz data-pipelines learning', p: 'library engine', diff: 'b',
@@ -59,7 +59,7 @@ export const DATABASES = [
     sig: [72, 90, 96, 62], s: 31000,
   }),
   seed('etcd-io/etcd', 'databases', ['devops'], 'Go', {
-    d: 'Distributed reliable key-value store with Raft consensus — the backbone of Kubernetes coordination.',
+    d: 'Distributed reliable key-value store with Raft consensus - the backbone of Kubernetes coordination.',
     w: 'Distributed reliable key-value store',
     t: 'Consensus Raft Watch Lease KV',
     u: 'data-storage deploy-infra', p: 'engine', diff: 'i',
@@ -94,7 +94,7 @@ export const DATABASES = [
     sig: [72, 97, 86, 90], s: 30000, alt: 'prisma/prisma kysely-org/kysely',
   }),
   seed('sqlite/sqlite', 'databases', ['oss'], 'C', {
-    d: 'The most deployed embedded database ever — zero config, public domain, runs everywhere.',
+    d: 'The most deployed embedded database ever - zero config, public domain, runs everywhere.',
     w: 'Most deployed embedded database ever',
     t: 'Embedded Zero-config FTS WAL Single-file',
     u: 'data-storage mobile-apps dev-tooling', p: 'engine library', diff: 'b',
@@ -108,7 +108,7 @@ export const DATABASES = [
     sig: [76, 90, 92, 82], s: 44000,
   }),
   seed('sqlitebrowser/sqlitebrowser', 'databases', ['devtools'], 'C++', {
-    d: 'Visual editor for SQLite databases — browse, edit and design schemas without writing SQL.',
+    d: 'Visual editor for SQLite databases - browse, edit and design schemas without writing SQL.',
     w: 'Visual editor for SQLite databases',
     t: 'SQLite GUI Schema-design Import-export',
     u: 'dev-tooling data-storage learning', p: 'tool', diff: 'b',
@@ -119,14 +119,14 @@ export const DATABASES = [
 /** Data science, notebooks and visualization. */
 export const DATASCI = [
   seed('pandas-dev/pandas', 'datasci', ['learning'], 'Python', {
-    d: 'Core Python dataframe manipulation library — the workhorse of data wrangling and analysis.',
+    d: 'Core Python dataframe manipulation library - the workhorse of data wrangling and analysis.',
     w: 'Core Python dataframe manipulation library',
     t: 'Dataframes Groupby Time-series Merge IO',
     u: 'data-pipelines dashboards-viz learning', p: 'library course', diff: 'b',
     sig: [86, 90, 96, 94], s: 45000, topics: 'dataframes analysis csv excel', alt: 'pola-rs/polars',
   }),
   seed('numpy/numpy', 'datasci', ['ai'], 'Python', {
-    d: 'Foundation of numerical Python computing — arrays, broadcasting and vectorized math under everything.',
+    d: 'Foundation of numerical Python computing - arrays, broadcasting and vectorized math under everything.',
     w: 'Foundation of numerical Python computing',
     t: 'Arrays Broadcasting Vectorization LAPACK',
     u: 'data-pipelines learning ai-integration', p: 'library', diff: 'b',
@@ -154,7 +154,7 @@ export const DATASCI = [
     sig: [72, 84, 92, 88], s: 17000,
   }),
   seed('seaborn/seaborn', 'datasci', ['learning'], 'Python', {
-    d: 'Attractive statistical charting made easy on top of matplotlib — one-liners for distributions & heatmaps.',
+    d: 'Attractive statistical charting made easy on top of matplotlib - one-liners for distributions & heatmaps.',
     w: 'Attractive statistical charting made easy',
     t: 'Statistical Heatmaps Palettes Categorical',
     u: 'dashboards-viz learning', p: 'library', diff: 'b',
@@ -168,7 +168,7 @@ export const DATASCI = [
     sig: [58, 76, 86, 80], s: 20000, f: 4300,
   }),
   seed('tidyverse/ggplot2', 'datasci', ['learning'], 'R', {
-    d: "The grammar-of-graphics plotting system for R — layered, composable statistical visualization.",
+    d: "The grammar-of-graphics plotting system for R - layered, composable statistical visualization.",
     w: 'Grammar-of-graphics plotting system',
     t: 'Grammar-of-graphics Layers Aesthetics Facets',
     u: 'dashboards-viz learning', p: 'library', diff: 'i',
@@ -196,7 +196,7 @@ export const DATASCI = [
     sig: [66, 84, 95, 90], s: 16000, f: 4300,
   }),
   seed('pola-rs/polars', 'datasci', [], 'Rust', {
-    d: 'Extremely fast multithreaded DataFrame library with lazy evaluation — pandas workflows at scale.',
+    d: 'Extremely fast multithreaded DataFrame library with lazy evaluation - pandas workflows at scale.',
     w: 'Extremely fast multithreaded DataFrame library',
     t: 'Lazy-evaluation Arrow Streaming Rust-core Parquet', l: 'Python',
     u: 'data-pipelines dashboards-viz ai-integration', p: 'library', diff: 'b',
@@ -217,7 +217,7 @@ export const DATASCI = [
     sig: [70, 92, 92, 84], s: 20000,
   }),
   seed('vega/altair', 'datasci', ['creative'], 'Python', {
-    d: 'Declarative statistical visualization built on Vega-Lite — describe plots as JSON grammars.',
+    d: 'Declarative statistical visualization built on Vega-Lite - describe plots as JSON grammars.',
     w: 'Declarative statistical visualization library',
     t: 'Vega-json Grammar-of-graphics Interactive Selections',
     u: 'dashboards-viz web-apps', p: 'library', diff: 'b',
@@ -243,7 +243,7 @@ export const SECURITY = [
     sig: [82, 88, 99, 58], s: 27000,
   }),
   seed('curl/curl', 'security', ['devtools'], 'C', {
-    d: 'Command-line tool and library transferring data with URLs — supports every protocol you have heard of.',
+    d: 'Command-line tool and library transferring data with URLs - supports every protocol you have heard of.',
     w: 'Command-line tool transferring URLs everywhere',
     t: 'HTTP-client TLS Protocols Libcurl Websockets',
     u: 'dev-tooling security-hardening automation-scraping', p: 'cli library', diff: 'b',
@@ -285,7 +285,7 @@ export const SECURITY = [
     sig: [66, 92, 95, 70], s: 18000, f: 2100,
   }),
   seed('fail2ban/fail2ban', 'security', ['automation'], 'Python', {
-    d: 'Intrusion prevention via log analysis — bans brute-force IPs automatically across services.',
+    d: 'Intrusion prevention via log analysis - bans brute-force IPs automatically across services.',
     w: 'Intrusion prevention via log analysis',
     t: 'Log-parsing Jails Firewalld SSH Filters',
     u: 'security-hardening automation-scraping deploy-infra', p: 'tool cli self-hosted', diff: 'b',
@@ -299,7 +299,7 @@ export const SECURITY = [
     sig: [60, 90, 90, 70], s: 12000, f: 1900,
   }),
   seed('metasploitframework/metasploit-framework', 'security', ['learning'], 'Ruby', {
-    d: "The world's most-used penetration testing framework — thousands of exploits, payloads and auxiliaries.",
+    d: "The world's most-used penetration testing framework - thousands of exploits, payloads and auxiliaries.",
     w: "World's most-used penetration testing framework",
     t: 'Exploits Payloads Meterpreter Recon Red-team',
     u: 'security-hardening learning', p: 'tool cli', diff: 'a',
@@ -313,7 +313,7 @@ export const SECURITY = [
     sig: [68, 70, 92, 70], s: 22000,
   }),
   seed('sherlock-project/sherlock', 'security', ['learning'], 'Python', {
-    d: 'Hunt down a username across hundreds of social networks — OSINT recon made simple.',
+    d: 'Hunt down a username across hundreds of social networks - OSINT recon made simple.',
     w: 'Find usernames across social networks',
     t: 'Osint Recon Cli Sites Json',
     u: 'learning security-hardening automation-scraping', p: 'cli', diff: 'b',

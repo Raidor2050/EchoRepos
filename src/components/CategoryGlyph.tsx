@@ -1,7 +1,7 @@
 import type { CategoryId } from '../data/types'
 
 /**
- * Abstract line-glyph per category — one visual identity per ecosystem.
+ * Abstract line-glyph per category - one visual identity per ecosystem.
  * Deliberately geometric/constellation-flavored rather than literal icons.
  */
 export function CategoryGlyph({ id, size = 22 }: { id: CategoryId; size?: number }) {

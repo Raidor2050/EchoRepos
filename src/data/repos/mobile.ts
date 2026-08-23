@@ -25,7 +25,7 @@ export const MOBILE = [
     sig: [80, 98, 92, 94], s: 38000,
   }),
   seed('IonicTeam/ionic-framework', 'mobile', ['frontend'], 'TypeScript', {
-    d: 'Cross-platform apps with web technologies — component library plus Capacitor native runtime.',
+    d: 'Cross-platform apps with web technologies - component library plus Capacitor native runtime.',
     w: 'Cross-platform apps using web technologies',
     t: 'Web-components Capacitor Pwa Angular React Vue',
     u: 'mobile-apps web-apps design-systems', p: 'framework library', diff: 'b',
@@ -53,7 +53,7 @@ export const MOBILE = [
     sig: [90, 92, 97, 84], s: 115000, alt: 'tauri-apps/tauri',
   }),
   seed('tauri-apps/tauri', 'mobile', ['security'], 'Rust', {
-    d: 'Tiny, secure binaries for desktop AND mobile apps — system webview with a Rust core and strong IPC.',
+    d: 'Tiny, secure binaries for desktop AND mobile apps - system webview with a Rust core and strong IPC.',
     w: 'Tiny secure desktop app binaries',
     t: 'Rust-core System-webview Plugins Ipc Mobile',
     l: 'Rust TypeScript',

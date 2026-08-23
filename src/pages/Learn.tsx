@@ -1,4 +1,5 @@
-import { Link, useParams } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useParams, useLocation } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { LESSONS, TRACK_ORDER, type Lesson } from '../data/lessons'
 import { LessonDiagram } from '../components/LessonDiagram'
@@ -8,8 +9,16 @@ import { useApp } from '../lib/store'
 import { usePageMeta } from '../lib/hooks'
 
 export default function Learn() {
-  usePageMeta('Learn Git & GitHub — EchoRepos')
+  usePageMeta('Learn Git & GitHub - EchoRepos')
   const { learned, resetLearned } = useApp()
+  const location = useLocation()
+
+  useEffect(() => {
+    const slug = location.hash.replace('#', '')
+    if (!slug) return
+    requestAnimationFrame(() => document.getElementById(`lesson-${slug}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' }))
+  }, [location.hash])
+
   const done = TRACK_ORDER.filter((s) => learned.has(s)).length
 
   return (
@@ -42,7 +51,7 @@ export default function Learn() {
           const isDone = learned.has(l.slug)
           return (
             <motion.div key={l.slug} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: (i % 4) * 0.07, duration: 0.45 }}>
-              <Link to={`/learn/${l.slug}`} className={`lesson-card${isDone ? ' is-done' : ''}`}>
+              <Link id={`lesson-${l.slug}`} to={`/learn/${l.slug}`} className={`lesson-card${isDone ? ' is-done' : ''}`}>
                 <span className="lesson-card__num">{String(i + 1).padStart(2, '0')}</span>
                 <span className="lesson-card__icon" aria-hidden>{l.icon}</span>
                 <h3>{l.title}</h3>
@@ -77,7 +86,7 @@ export function LessonDetail() {
 }
 
 function LessonView({ lesson, index }: { lesson: Lesson; index: number }) {
-  usePageMeta(`${lesson.title} — EchoRepos Learn`)
+  usePageMeta(`${lesson.title} - EchoRepos Learn`)
   const { learned, markLearned } = useApp()
   const isDone = learned.has(lesson.slug)
   const next = index + 1 < LESSONS.length ? LESSONS[index + 1] : null

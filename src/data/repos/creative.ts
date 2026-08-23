@@ -3,7 +3,7 @@ import { seed } from './factory'
 /** Creative coding, motion, graphics and visualization. */
 export const CREATIVE = [
   seed('mrdoob/three.js', 'creative', ['gamedev'], 'JavaScript', {
-    d: 'The definitive JavaScript 3D graphics library — scenes, materials, shaders and WebGL/WebGPU power.',
+    d: 'The definitive JavaScript 3D graphics library - scenes, materials, shaders and WebGL/WebGPU power.',
     w: 'Definitive JavaScript 3D graphics library',
     t: 'Webgl Webgpu Shaders Loaders Scenes',
     l: 'TypeScript',
@@ -11,7 +11,7 @@ export const CREATIVE = [
     sig: [90, 97, 94, 84], s: 103000, topics: '3d webgl graphics shaders',
   }),
   seed('pmndrs/react-three-fiber', 'creative', ['frontend'], 'TypeScript', {
-    d: 'React renderer for three.js — build declarative 3D scenes with components, hooks and suspense.',
+    d: 'React renderer for three.js - build declarative 3D scenes with components, hooks and suspense.',
     w: 'React renderer for three.js scenes',
     t: 'Threejs React Declarative Drei Ecs',
     u: 'games design-systems web-apps', p: 'library', diff: 'i',
@@ -25,7 +25,7 @@ export const CREATIVE = [
     sig: [72, 96, 93, 92], s: 28000,
   }),
   seed('remotion-dev/remotion', 'creative', ['webdev'], 'TypeScript', {
-    d: 'Create real videos programmatically in React — frame-perfect rendering to mp4 from code.',
+    d: 'Create real videos programmatically in React - frame-perfect rendering to mp4 from code.',
     w: 'Make videos programmatically in React',
     t: 'Video React Rendering Frames Lambda Player',
     u: 'design-systems content-sites automation-scraping', p: 'framework library tool', diff: 'i',
@@ -46,7 +46,7 @@ export const CREATIVE = [
     sig: [88, 78, 96, 88], s: 109000,
   }),
   seed('excalidraw/excalidraw', 'creative', ['frontend'], 'TypeScript', {
-    d: 'Hand-drawn style collaborative whiteboard everyone loves — embeddable as a React component.',
+    d: 'Hand-drawn style collaborative whiteboard everyone loves - embeddable as a React component.',
     w: 'Hand-drawn style collaborative whiteboard everyone loves',
     t: 'Whiteboard Collaboration Canvas E2ee Embeddable',
     u: 'dev-tooling realtime-chat web-apps', p: 'app-template library', diff: 'b',
@@ -60,7 +60,7 @@ export const CREATIVE = [
     sig: [76, 98, 88, 88], s: 42000,
   }),
   seed('drawio/drawio', 'creative', ['devtools'], 'JavaScript', {
-    d: 'The most popular diagramming whiteboard application — flowcharts, org charts and architecture maps.',
+    d: 'The most popular diagramming whiteboard application - flowcharts, org charts and architecture maps.',
     w: 'Most popular diagramming whiteboard application',
     t: 'Flowcharts Uml Mockups Offline Desktop',
     l: 'TypeScript HTML',
@@ -68,7 +68,7 @@ export const CREATIVE = [
     sig: [80, 80, 90, 82], s: 52000,
   }),
   seed('blender/blender', 'creative', ['gamedev'], 'C++', {
-    d: 'Complete professional 3D creation suite — modeling, sculpting, animation, VFX and compositing.',
+    d: 'Complete professional 3D creation suite - modeling, sculpting, animation, VFX and compositing.',
     w: 'Complete professional 3D creation suite',
     t: 'Modeling Sculpting Grease-pencil Geometry-nodes Cycles',
     u: 'games learning design-systems', p: 'tool engine', diff: 'a',
@@ -82,7 +82,7 @@ export const CREATIVE = [
     sig: [82, 94, 99, 62], s: 50000,
   }),
   seed('obsproject/obs-studio', 'creative', [], 'C', {
-    d: 'Free streaming and recording software standard — scenes, sources, plugins, compositor.',
+    d: 'Free streaming and recording software standard - scenes, sources, plugins, compositor.',
     w: 'Free streaming and recording software standard',
     t: 'Recording Livestreaming Scenes Plugins Compositing',
     l: 'C++',

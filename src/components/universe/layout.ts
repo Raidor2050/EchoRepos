@@ -34,8 +34,8 @@ export interface UniParticle {
   size: number
 }
 
-/** Hub position as viewport fractions — right-of-center so hero copy breathes. */
-export const HUB = { x: 0.63, y: 0.47 }
+/** Hub position as viewport fractions - upper-right so centered hero copy breathes. */
+export const HUB = { x: 0.71, y: 0.33 }
 
 export function buildNodes(isMobile: boolean): UniNode[] {
   const rng = mulberry32(777)
@@ -83,7 +83,7 @@ export function buildParticles(count: number): UniParticle[] {
   }))
 }
 
-/** Random cross-cluster chords — the "everything is connected" texture. */
+/** Random cross-cluster chords - the "everything is connected" texture. */
 export function buildChords(nodes: UniNode[], count = 14): Array<[number, number]> {
   const rng = mulberry32(991)
   const out: Array<[number, number]> = []

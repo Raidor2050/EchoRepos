@@ -3,14 +3,14 @@ import { seed } from './factory'
 /** Agent frameworks, LLM application tooling and chat platforms. */
 export const AGENTS = [
   seed('langchain-ai/langchain', 'agents', ['ai'], 'TypeScript', {
-    d: 'The widely-used framework for building LLM applications — chains, RAG pipelines, tools and integrations.',
+    d: 'The widely-used framework for building LLM applications - chains, RAG pipelines, tools and integrations.',
     w: 'Widely-used framework for LLM applications',
     t: 'Chains RAG Tools Memory Lcel', l: 'Python',
     u: 'ai-integration data-pipelines automation-scraping', p: 'framework library', diff: 'i',
     sig: [92, 96, 84, 84], s: 100000, topics: 'llm rag agents chains', alt: 'run-llama/llama_index stanfordnlp/dspy',
   }),
   seed('run-llama/llama_index', 'agents', ['ai'], 'Python', {
-    d: 'The data framework for connecting LLMs to your documents — ingestion, indexing, retrieval and query engines.',
+    d: 'The data framework for connecting LLMs to your documents - ingestion, indexing, retrieval and query engines.',
     w: 'Data framework connecting LLMs to data',
     t: 'RAG Indexing Connectors Querying Embeddings',
     u: 'ai-integration data-pipelines dashboards-viz', p: 'framework library', diff: 'i',
@@ -24,14 +24,14 @@ export const AGENTS = [
     sig: [80, 94, 78, 82], s: 40000, alt: 'crewAIInc/crewAI',
   }),
   seed('crewAIInc/crewAI', 'agents', ['ai'], 'Python', {
-    d: 'Role-based autonomous agent teams made simple — define crews, tasks and tools with clean abstractions.',
+    d: 'Role-based autonomous agent teams made simple - define crews, tasks and tools with clean abstractions.',
     w: 'Role-based autonomous agent teams made simple',
     t: 'Crews Roles Tools Processes',
     u: 'ai-integration automation-scraping', p: 'framework library', diff: 'b',
     sig: [76, 93, 74, 88], s: 30000,
   }),
   seed('All-Hands-AI/OpenHands', 'agents', ['devtools'], 'Python', {
-    d: 'An autonomous software-developer platform — agents that read, edit and run code against real benchmarks.',
+    d: 'An autonomous software-developer platform - agents that read, edit and run code against real benchmarks.',
     w: 'Autonomous software developer agent platform',
     t: 'Coding-agent SWE-bench Sandbox Browser',
     u: 'dev-tooling ai-integration automation-scraping', p: 'app-template self-hosted', diff: 'a',
@@ -45,14 +45,14 @@ export const AGENTS = [
     sig: [78, 98, 82, 84], s: 33000,
   }),
   seed('Significant-Gravitas/AutoGPT', 'agents', [], 'Python', {
-    d: 'The original viral autonomous-agent project — now a platform for building, deploying and monitoring agents.',
+    d: 'The original viral autonomous-agent project - now a platform for building, deploying and monitoring agents.',
     w: 'The original viral autonomous agent project',
     t: 'Autonomous-agents Platform Blocks Forge',
     u: 'ai-integration automation-scraping', p: 'app-template self-hosted', diff: 'a',
     sig: [88, 74, 62, 66], s: 175000, up: '2026-05',
   }),
   seed('ChatGPTNextWeb/NextChat', 'agents', ['frontend'], 'TypeScript', {
-    d: 'Lightweight ChatGPT web interface deployable anywhere — cross-platform, fast and easy to self-host.',
+    d: 'Lightweight ChatGPT web interface deployable anywhere - cross-platform, fast and easy to self-host.',
     w: 'Popular lightweight ChatGPT web interface',
     t: 'Chatbot Webui Cross-platform Vercel',
     u: 'ai-integration realtime-chat web-apps', p: 'app-template self-hosted', diff: 'b',
@@ -73,7 +73,7 @@ export const AGENTS = [
     sig: [68, 94, 80, 78], s: 22000,
   }),
   seed('browser-use/browser-use', 'agents', ['automation'], 'Python', {
-    d: 'Let AI agents control the browser naturally — connect LLMs to Playwright-driven browsing sessions.',
+    d: 'Let AI agents control the browser naturally - connect LLMs to Playwright-driven browsing sessions.',
     w: 'Agents controlling web browsers naturally',
     t: 'Browser-automation Playwright Vision DOM',
     u: 'automation-scraping ai-integration', p: 'library', diff: 'i',
@@ -87,14 +87,14 @@ export const AGENTS = [
     sig: [70, 92, 76, 90], s: 22000,
   }),
   seed('OpenInterpreter/open-interpreter', 'agents', ['devtools'], 'Python', {
-    d: 'Natural-language code execution on your computer — an agent runtime for shell, Python and JS.',
+    d: 'Natural-language code execution on your computer - an agent runtime for shell, Python and JS.',
     w: 'Natural-language code execution agent runtime',
     t: 'Code-execution Terminal Sandbox Local',
     u: 'dev-tooling ai-integration automation-scraping', p: 'cli tool', diff: 'i',
     sig: [78, 70, 66, 80], s: 58000, up: '2026-03',
   }),
   seed('vercel/ai', 'agents', ['webdev'], 'TypeScript', {
-    d: 'The TypeScript toolkit for streaming AI apps — unified provider APIs, React hooks and generative UI.',
+    d: 'The TypeScript toolkit for streaming AI apps - unified provider APIs, React hooks and generative UI.',
     w: 'TypeScript toolkit for streaming AI apps',
     t: 'Streaming SDK React-hooks Generative-ui Providers',
     u: 'ai-integration web-apps saas apis', p: 'library', diff: 'b',

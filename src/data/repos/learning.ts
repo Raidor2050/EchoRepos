@@ -3,7 +3,7 @@ import { seed } from './factory'
 /** Curricula, roadmaps and educational codebases. */
 export const LEARNING = [
   seed('freeCodeCamp/freeCodeCamp', 'learning', ['webdev'], 'TypeScript', {
-    d: 'Full coding curriculum earning free certifications — thousands of hours of projects and exercises.',
+    d: 'Full coding curriculum earning free certifications - thousands of hours of projects and exercises.',
     w: 'Full coding curriculum earning certifications free',
     t: 'Curriculum Certifications Projects Nonprofit',
     u: 'learning web-apps apis mobile-apps', p: 'course curriculum', diff: 'b',
@@ -31,7 +31,7 @@ export const LEARNING = [
     sig: [95, 55, 80, 97], s: 315000, up: '2025-12',
   }),
   seed('donnemartin/system-design-primer', 'learning', ['backend'], 'Python', {
-    d: 'Learn large-scale system design principles — scalability, consistency, caches, queues, sharding.',
+    d: 'Learn large-scale system design principles - scalability, consistency, caches, queues, sharding.',
     w: 'Learn large-scale system design principles',
     t: 'System-design Scalability Architecture Flashcards Interview',
     u: 'learning deploy-infra data-storage', p: 'course', diff: 'i',
@@ -45,7 +45,7 @@ export const LEARNING = [
     sig: [90, 58, 82, 96], s: 190000, up: '2025-11',
   }),
   seed('TheAlgorithms/Python', 'learning', ['ai'], 'Python', {
-    d: 'All algorithms implemented and explained in Python — from sorting to machine learning basics.',
+    d: 'All algorithms implemented and explained in Python - from sorting to machine learning basics.',
     w: 'All algorithms implemented in Python',
     t: 'Implementations Search-sort Ciphers Neural-network Maths',
     u: 'learning ai-integration data-pipelines', p: 'course library', diff: 'b',
@@ -76,7 +76,7 @@ export const LEARNING = [
     sig: [86, 70, 84, 97], s: 85000,
   }),
   seed('github/opensource.guide', 'learning', ['oss'], 'HTML', {
-    d: "GitHub's official guides to launching and growing open-source projects — from first repo to community.",
+    d: "GitHub's official guides to launching and growing open-source projects - from first repo to community.",
     w: "GitHub's official guides launching open-source projects",
     t: 'Oss-guide Best-practices Community Contributing',
     u: 'learning', p: 'course', diff: 'b',
@@ -97,14 +97,14 @@ export const LEARNING = [
     sig: [96, 45, 74, 90], s: 340000, up: '2026-01',
   }),
   seed('practical-tutorials/project-based-learning', 'learning', [], 'HTML', {
-    d: 'Curated project-based programming tutorials across languages — learn by actually building.',
+    d: 'Curated project-based programming tutorials across languages - learn by actually building.',
     w: 'Curated project-based programming tutorials',
     t: 'Tutorials Project-ideas Multi-language Guided',
     u: 'learning web-apps games mobile-apps', p: 'course', diff: 'b',
     sig: [90, 48, 76, 95], s: 220000, up: '2026-03',
   }),
   seed('openai/openai-cookbook', 'learning', ['agents'], 'Jupyter Notebook', {
-    d: 'Practical examples and guides for building with OpenAI models — embeddings, RAG, evals, agents.',
+    d: 'Practical examples and guides for building with OpenAI models - embeddings, RAG, evals, agents.',
     w: 'Practical examples for building with OpenAI API',
     t: 'Examples Recipes Embeddings Evals Rag',
     l: 'Python TypeScript',

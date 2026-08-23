@@ -7,7 +7,7 @@ import { usePrefersReducedMotion } from '../lib/hooks'
 import { buildChords, buildNodes, buildParticles, HUB, makeSprite, type UniNode } from './universe/layout'
 
 /**
- * The EchoRepos universe — living repository constellation.
+ * The EchoRepos universe - living repository constellation.
  * Canvas 2D · parametric orbital drift · pre-rendered glow sprites ·
  * adaptive quality (DPR cap, fps watchdog, visibility pause) ·
  * reduced-motion renders a static constellation.
@@ -191,7 +191,7 @@ export function UniverseCanvas() {
         ctx!.stroke()
       }
 
-      /* hub — pulsing echo rings + core */
+      /* hub - pulsing echo rings + core */
       const pulse = (time * 0.0012) % 1
       for (const k of [pulse, (pulse + 0.5) % 1]) {
         ctx!.strokeStyle = `rgba(125,249,255,${(0.35 * (1 - k)).toFixed(3)})`
@@ -299,7 +299,7 @@ export function UniverseCanvas() {
         <div className="univ-tip" style={{ left: hover.x, top: hover.y }}>
           <b>{hover.repo.id}</b>
           <span>
-            ★ {formatCompact(hover.repo.stars)} · {hover.repo.language} — click to open
+            ★ {formatCompact(hover.repo.stars)} · {hover.repo.language} - click to open
           </span>
         </div>
       )}
