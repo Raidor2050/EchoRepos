@@ -1,0 +1,103 @@
+import { seed } from './factory'
+
+/** Agent frameworks, LLM application tooling and chat platforms. */
+export const AGENTS = [
+  seed('langchain-ai/langchain', 'agents', ['ai'], 'TypeScript', {
+    d: 'The widely-used framework for building LLM applications — chains, RAG pipelines, tools and integrations.',
+    w: 'Widely-used framework for LLM applications',
+    t: 'Chains RAG Tools Memory Lcel', l: 'Python',
+    u: 'ai-integration data-pipelines automation-scraping', p: 'framework library', diff: 'i',
+    sig: [92, 96, 84, 84], s: 100000, topics: 'llm rag agents chains', alt: 'run-llama/llama_index stanfordnlp/dspy',
+  }),
+  seed('run-llama/llama_index', 'agents', ['ai'], 'Python', {
+    d: 'The data framework for connecting LLMs to your documents — ingestion, indexing, retrieval and query engines.',
+    w: 'Data framework connecting LLMs to data',
+    t: 'RAG Indexing Connectors Querying Embeddings',
+    u: 'ai-integration data-pipelines dashboards-viz', p: 'framework library', diff: 'i',
+    sig: [82, 95, 86, 86], s: 38000, alt: 'langchain-ai/langchain',
+  }),
+  seed('microsoft/autogen', 'agents', ['ai'], 'Python', {
+    d: 'Multi-agent conversation orchestration: build agent teams that plan, execute and critique each other.',
+    w: 'Multi-agent conversation orchestration framework',
+    t: 'Multi-agent Orchestration Autogen Studio Events',
+    u: 'ai-integration automation-scraping dev-tooling', p: 'framework', diff: 'i',
+    sig: [80, 94, 78, 82], s: 40000, alt: 'crewAIInc/crewAI',
+  }),
+  seed('crewAIInc/crewAI', 'agents', ['ai'], 'Python', {
+    d: 'Role-based autonomous agent teams made simple — define crews, tasks and tools with clean abstractions.',
+    w: 'Role-based autonomous agent teams made simple',
+    t: 'Crews Roles Tools Processes',
+    u: 'ai-integration automation-scraping', p: 'framework library', diff: 'b',
+    sig: [76, 93, 74, 88], s: 30000,
+  }),
+  seed('All-Hands-AI/OpenHands', 'agents', ['devtools'], 'Python', {
+    d: 'An autonomous software-developer platform — agents that read, edit and run code against real benchmarks.',
+    w: 'Autonomous software developer agent platform',
+    t: 'Coding-agent SWE-bench Sandbox Browser',
+    u: 'dev-tooling ai-integration automation-scraping', p: 'app-template self-hosted', diff: 'a',
+    sig: [80, 97, 72, 70], s: 45000,
+  }),
+  seed('Aider-AI/aider', 'agents', ['devtools'], 'Python', {
+    d: 'Terminal AI pair programmer that edits your git repo directly with sensible commits and diffs.',
+    w: 'Terminal AI pair programmer editing git repos',
+    t: 'CLI Pair-programming Git-integration Maps',
+    u: 'dev-tooling ai-integration cli', p: 'cli tool', diff: 'i',
+    sig: [78, 98, 82, 84], s: 33000,
+  }),
+  seed('Significant-Gravitas/AutoGPT', 'agents', [], 'Python', {
+    d: 'The original viral autonomous-agent project — now a platform for building, deploying and monitoring agents.',
+    w: 'The original viral autonomous agent project',
+    t: 'Autonomous-agents Platform Blocks Forge',
+    u: 'ai-integration automation-scraping', p: 'app-template self-hosted', diff: 'a',
+    sig: [88, 74, 62, 66], s: 175000, up: '2026-05',
+  }),
+  seed('ChatGPTNextWeb/NextChat', 'agents', ['frontend'], 'TypeScript', {
+    d: 'Lightweight ChatGPT web interface deployable anywhere — cross-platform, fast and easy to self-host.',
+    w: 'Popular lightweight ChatGPT web interface',
+    t: 'Chatbot Webui Cross-platform Vercel',
+    u: 'ai-integration realtime-chat web-apps', p: 'app-template self-hosted', diff: 'b',
+    sig: [84, 72, 78, 78], s: 75000, alt: 'lobehub/lobe-chat danny-avila/LibreChat',
+  }),
+  seed('lobehub/lobe-chat', 'agents', ['frontend'], 'TypeScript', {
+    d: 'Feature-rich open-source AI chat framework: plugins, knowledge bases, agents marketplace and modern UI.',
+    w: 'Feature-rich open-source AI chat framework',
+    t: 'Chatbot Plugins Knowledge-base RAG TTS',
+    u: 'ai-integration realtime-chat data-storage', p: 'app-template self-hosted', diff: 'b',
+    sig: [80, 95, 80, 80], s: 55000,
+  }),
+  seed('danny-avila/LibreChat', 'agents', [], 'TypeScript', {
+    d: 'Enhanced self-hosted multi-provider chat UI supporting OpenAI, Anthropic, local models and more.',
+    w: 'Enhanced self-hosted multi-provider chat UI',
+    t: 'Chatbot Multi-provider Self-hosted Agents',
+    u: 'ai-integration realtime-chat self-hosted', p: 'self-hosted app-template', diff: 'b',
+    sig: [68, 94, 80, 78], s: 22000,
+  }),
+  seed('browser-use/browser-use', 'agents', ['automation'], 'Python', {
+    d: 'Let AI agents control the browser naturally — connect LLMs to Playwright-driven browsing sessions.',
+    w: 'Agents controlling web browsers naturally',
+    t: 'Browser-automation Playwright Vision DOM',
+    u: 'automation-scraping ai-integration', p: 'library', diff: 'i',
+    sig: [82, 99, 70, 82], s: 65000,
+  }),
+  seed('stanfordnlp/dspy', 'agents', ['learning'], 'Python', {
+    d: 'Declarative programming of LM pipelines: write signatures, let DSPy optimize prompts and weights.',
+    w: 'Programming framework optimizing LM pipelines declaratively',
+    t: 'Prompt-optimization Signatures Compilers Metrics',
+    u: 'ai-integration learning data-pipelines', p: 'framework course', diff: 'a',
+    sig: [70, 92, 76, 90], s: 22000,
+  }),
+  seed('OpenInterpreter/open-interpreter', 'agents', ['devtools'], 'Python', {
+    d: 'Natural-language code execution on your computer — an agent runtime for shell, Python and JS.',
+    w: 'Natural-language code execution agent runtime',
+    t: 'Code-execution Terminal Sandbox Local',
+    u: 'dev-tooling ai-integration automation-scraping', p: 'cli tool', diff: 'i',
+    sig: [78, 70, 66, 80], s: 58000, up: '2026-03',
+  }),
+  seed('vercel/ai', 'agents', ['webdev'], 'TypeScript', {
+    d: 'The TypeScript toolkit for streaming AI apps — unified provider APIs, React hooks and generative UI.',
+    w: 'TypeScript toolkit for streaming AI apps',
+    t: 'Streaming SDK React-hooks Generative-ui Providers',
+    u: 'ai-integration web-apps saas apis', p: 'library', diff: 'b',
+    sig: [72, 98, 86, 90], s: 15000, f: 2400,
+  }),
+]

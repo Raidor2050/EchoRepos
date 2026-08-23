@@ -1,0 +1,92 @@
+import { seed } from './factory'
+
+/** Creative coding, motion, graphics and visualization. */
+export const CREATIVE = [
+  seed('mrdoob/three.js', 'creative', ['gamedev'], 'JavaScript', {
+    d: 'The definitive JavaScript 3D graphics library — scenes, materials, shaders and WebGL/WebGPU power.',
+    w: 'Definitive JavaScript 3D graphics library',
+    t: 'Webgl Webgpu Shaders Loaders Scenes',
+    l: 'TypeScript',
+    u: 'games design-systems dashboards-viz web-apps', p: 'library engine', diff: 'i',
+    sig: [90, 97, 94, 84], s: 103000, topics: '3d webgl graphics shaders',
+  }),
+  seed('pmndrs/react-three-fiber', 'creative', ['frontend'], 'TypeScript', {
+    d: 'React renderer for three.js — build declarative 3D scenes with components, hooks and suspense.',
+    w: 'React renderer for three.js scenes',
+    t: 'Threejs React Declarative Drei Ecs',
+    u: 'games design-systems web-apps', p: 'library', diff: 'i',
+    sig: [74, 92, 86, 90], s: 28000,
+  }),
+  seed('motiondivision/motion', 'creative', ['frontend'], 'TypeScript', {
+    d: "Framer Motion's successor: production-grade animation library for React with springs, gestures and FLIP.",
+    w: 'Production-grade React motion library',
+    t: 'Springs Gestures Layout-animations Animatepresence',
+    u: 'design-systems web-apps games', p: 'library', diff: 'b',
+    sig: [72, 96, 93, 92], s: 28000,
+  }),
+  seed('remotion-dev/remotion', 'creative', ['webdev'], 'TypeScript', {
+    d: 'Create real videos programmatically in React — frame-perfect rendering to mp4 from code.',
+    w: 'Make videos programmatically in React',
+    t: 'Video React Rendering Frames Lambda Player',
+    u: 'design-systems content-sites automation-scraping', p: 'framework library tool', diff: 'i',
+    sig: [68, 95, 88, 92], s: 22000,
+  }),
+  seed('processing/p5.js', 'creative', ['learning'], 'JavaScript', {
+    d: 'Creative coding library making generative art, sketches and simulations accessible to everyone.',
+    w: 'Creative coding library making art accessible',
+    t: 'Canvas Sketches Generative-art Accessibility Shaders',
+    u: 'learning games design-systems', p: 'library course', diff: 'b',
+    sig: [66, 82, 85, 96], s: 22000,
+  }),
+  seed('d3/d3', 'creative', ['datasci'], 'JavaScript', {
+    d: 'Foundational data-visualization building blocks: bind data to DOM, drive SVG with transitions.',
+    w: 'Foundational data visualization building blocks',
+    t: 'Svg-bindings Scales Transitions Selections Force',
+    u: 'dashboards-viz design-systems data-pipelines', p: 'library course', diff: 'a',
+    sig: [88, 78, 96, 88], s: 109000,
+  }),
+  seed('excalidraw/excalidraw', 'creative', ['frontend'], 'TypeScript', {
+    d: 'Hand-drawn style collaborative whiteboard everyone loves — embeddable as a React component.',
+    w: 'Hand-drawn style collaborative whiteboard everyone loves',
+    t: 'Whiteboard Collaboration Canvas E2ee Embeddable',
+    u: 'dev-tooling realtime-chat web-apps', p: 'app-template library', diff: 'b',
+    sig: [86, 96, 90, 84], s: 95000,
+  }),
+  seed('tldraw/tldraw', 'creative', ['frontend'], 'TypeScript', {
+    d: 'Exquisitely engineered infinite canvas SDK for whiteboards, diagramming and creative tools.',
+    w: 'Exquisitely embeddable infinite canvas SDK',
+    t: 'Infinite-canvas Whiteboard Sdk Shapes Eraser',
+    u: 'dev-tooling design-systems realtime-chat', p: 'library app-template', diff: 'b',
+    sig: [76, 98, 88, 88], s: 42000,
+  }),
+  seed('drawio/drawio', 'creative', ['devtools'], 'JavaScript', {
+    d: 'The most popular diagramming whiteboard application — flowcharts, org charts and architecture maps.',
+    w: 'Most popular diagramming whiteboard application',
+    t: 'Flowcharts Uml Mockups Offline Desktop',
+    l: 'TypeScript HTML',
+    u: 'dev-tooling learning', p: 'app-template self-hosted', diff: 'b',
+    sig: [80, 80, 90, 82], s: 52000,
+  }),
+  seed('blender/blender', 'creative', ['gamedev'], 'C++', {
+    d: 'Complete professional 3D creation suite — modeling, sculpting, animation, VFX and compositing.',
+    w: 'Complete professional 3D creation suite',
+    t: 'Modeling Sculpting Grease-pencil Geometry-nodes Cycles',
+    u: 'games learning design-systems', p: 'tool engine', diff: 'a',
+    sig: [70, 98, 97, 74], s: 14000, f: 2300,
+  }),
+  seed('ffmpeg/ffmpeg', 'creative', ['devops'], 'C', {
+    d: 'The Swiss-army multimedia framework everywhere: encode, decode, transcode, stream, filter.',
+    w: 'Swiss-army multimedia framework everywhere',
+    t: 'Codecs Filters Streaming Libav Hardware-accel',
+    u: 'data-pipelines deploy-infra automation-scraping', p: 'cli library engine', diff: 'a',
+    sig: [82, 94, 99, 62], s: 50000,
+  }),
+  seed('obsproject/obs-studio', 'creative', [], 'C', {
+    d: 'Free streaming and recording software standard — scenes, sources, plugins, compositor.',
+    w: 'Free streaming and recording software standard',
+    t: 'Recording Livestreaming Scenes Plugins Compositing',
+    l: 'C++',
+    u: 'desktop-apps learning', p: 'tool self-hosted', diff: 'b',
+    sig: [84, 92, 96, 78], s: 63000,
+  }),
+]
