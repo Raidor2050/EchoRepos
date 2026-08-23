@@ -1,5 +1,10 @@
 name: Deploy to GitHub Pages
 
+# NOTE: currently DISABLED. Pushing workflow files requires the `workflow`
+# scope on the GitHub credential (`gh auth refresh -h github.com -s workflow`).
+# Until then, deployment is manual: build → commit dist to gh-pages branch.
+# To re-enable: move this file to .github/workflows/deploy.yml and push.
+
 on:
   push:
     branches: [main]
@@ -35,9 +40,6 @@ jobs:
 
       - name: Build
         run: npx vite build
-        env:
-          # base path is fixed to /EchoRepos/ in vite.config.ts
-          NODE_ENV: production
 
       - uses: actions/configure-pages@v5
         with:
