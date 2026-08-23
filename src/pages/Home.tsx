@@ -4,6 +4,7 @@ import { UniverseCanvas } from '../components/UniverseCanvas'
 import { CommandSearch } from '../components/CommandSearch'
 import { CategoryGlyph } from '../components/CategoryGlyph'
 import { CommitChainDiagram, DataStream } from '../components/decor'
+import { LiveTopRepos } from '../components/LiveTopRepos'
 import { IconArrowRight, IconBolt, IconBook, IconSparkle } from '../components/Icons'
 import { SectionHeading } from '../components/atoms'
 import { CATEGORIES } from '../data/taxonomy'
@@ -136,6 +137,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── live top repos (fetched from the GitHub API on every load) ── */}
+      <LiveTopRepos />
 
       {/* ── git history teaser ── */}
       <section className="section">

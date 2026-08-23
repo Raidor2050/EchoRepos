@@ -32,3 +32,4 @@
 - Every RepoCard now has an always-visible **Visit Repo** button linking to github.com/owner/name.
 - Home hero stats now derive repo/ecosystem/star totals from the live catalog instead of hardcoded constants.
 - Tests updated (24 categories); typecheck clean, 35/35 vitest green.
+- Added a **Top GitHub Repos** homepage section: live client-side fetch from the GitHub Search API (most-starred, per_page 8) on every page load; skeleton loaders, LIVE/curated-snapshot status badge, graceful curated fallback on rate-limit or failure; repos already in the catalog deep-link internally, others open on GitHub. Pure helpers in `src/lib/live.ts` covered by `tests/live.test.ts`.
