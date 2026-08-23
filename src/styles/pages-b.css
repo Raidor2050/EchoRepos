@@ -14,8 +14,10 @@
 .page-cats{position:relative;overflow:hidden}
 .bubble-field{margin:-6px 0 10px;position:relative;z-index:1;border:none;background:transparent}
 .bubble-field svg{display:block;width:100%;height:auto;outline:none}
-.bubble{transition:r .25s}
-.bubble-field g:hover .bubble{filter:brightness(1.35)}
+.bubble{transition:r .25s,filter .25s}
+.bubble-field g:hover .bubble{filter:brightness(1.3) drop-shadow(0 0 16px var(--cat-c))}
+.bubble-ring{animation:ringdrift 46s linear infinite;transform-box:fill-box;transform-origin:center}
+@keyframes ringdrift{to{transform:rotate(360deg)}}
 @media (max-width:759px){
   .bubble-field{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-inline:-4vw}
   .bubble-field svg{min-width:920px}

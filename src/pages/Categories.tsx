@@ -25,36 +25,93 @@ export default function Categories() {
       </header>
 
       <div className="bubble-field" aria-hidden>
-        <svg viewBox="0 0 1400 540" width="100%">
-          {CATEGORIES.map((c, i) => {
-            const n = categoryCount(c.id)
-            const r = 32 + (n / max) * 62
-            /* deterministic pseudo-layout: golden-angle spiral clusters */
-            const a = i * 2.39996
-            const rad = 150 + (i % 3) * 88
-            const cx = 700 + Math.cos(a) * rad * 1.95
-            const cy = 270 + Math.sin(a) * rad * 1.05
-            return (
-              <motion.g
-                key={c.id}
-                initial={{ opacity: 0, scale: 0.6 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05, type: 'spring', stiffness: 160, damping: 16 }}
-                style={{ transformOrigin: `${cx}px ${cy}px`, cursor: 'pointer' }}
-                onClick={() => navigate(`/explore?cat=${c.id}`)}
-              >
-                <circle cx={cx} cy={cy} r={r + 12} fill={`${c.hue}0d`} stroke={c.hue} strokeOpacity="0.25" />
-                <circle cx={cx} cy={cy} r={r} fill={`${c.hue}1f`} stroke={c.hue} strokeWidth="1.4" className="bubble" style={{ '--cat-c': c.hue } as React.CSSProperties} />
-                <text x={cx} y={cy - 2} textAnchor="middle" fontSize="14" fontWeight="700" fill="#e8eef6" fontFamily="var(--font-display)">
-                  {n}
-                </text>
-                <text x={cx} y={cy + 17} textAnchor="middle" fontSize="11" fill={c.hue} fontFamily="var(--font-mono)" letterSpacing="1.2">
-                  {c.label.toUpperCase()}
-                </text>
-              </motion.g>
-            )
-          })}
+        <svg viewBox="0 0 1500 660" width="100%">
+          <defs>
+            {CATEGORIES.map((c) => (
+              <radialGradient key={c.id} id={`bg-${c.id}`} cx="34%" cy="28%" r="78%">
+                <stop offset="0%" stopColor={c.hue} stopOpacity="0.42" />
+                <stop offset="55%" stopColor={c.hue} stopOpacity="0.17" />
+                <stop offset="100%" stopColor={c.hue} stopOpacity="0.05" />
+              </radialGradient>
+            ))}
+          </defs>
+          {(() => {
+            /* golden-angle sunflower layout, then shrink-to-fit so every node stays inside */
+            const W = 1500
+            const H = 660
+            const CX = W / 2
+            const CY = H / 2
+            const N = CATEGORIES.length
+            const rs = CATEGORIES.map((c) => 34 + (categoryCount(c.id) / max) * 66)
+            const rmax = Math.max(...rs)
+            const raw = CATEGORIES.map((_, i) => {
+              const a = i * 2.39996 + 0.9
+              const t = Math.sqrt((i + 0.6) / N)
+              return { ux: Math.cos(a) * t, uy: Math.sin(a) * t }
+            })
+            const fits = (ax: number, ay: number) =>
+              raw.every((p, i) => {
+                const x = CX + p.ux * ax
+                const y = CY + p.uy * ay
+                return x - rs[i] >= 10 && x + rs[i] <= W - 10 && y - rs[i] >= 10 && y + rs[i] <= H - 10
+              })
+            let ax = CX - rmax - 10
+            let ay = CY - rmax - 10
+            while (!fits(ax, ay) && ax > 40 && ay > 40) {
+              ax *= 0.96
+              ay *= 0.96
+            }
+            return raw.map((p, i) => {
+              const c = CATEGORIES[i]
+              const n = categoryCount(c.id)
+              const r = rs[i]
+              const cx = CX + p.ux * ax
+              const cy = CY + p.uy * ay
+              return (
+                <motion.g
+                  key={c.id}
+                  initial={{ opacity: 0, scale: 0.6 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.04, type: 'spring', stiffness: 160, damping: 16 }}
+                  style={{ transformOrigin: `${cx}px ${cy}px`, cursor: 'pointer' }}
+                  onClick={() => navigate(`/explore?cat=${c.id}`)}
+                >
+                  <circle cx={cx} cy={cy} r={r + 18} fill={c.hue} opacity="0.06" />
+                  <circle
+                    className="bubble-ring"
+                    cx={cx}
+                    cy={cy}
+                    r={r + 8}
+                    fill="none"
+                    stroke={c.hue}
+                    strokeOpacity="0.4"
+                    strokeWidth="1"
+                    strokeDasharray="2 7"
+                    strokeLinecap="round"
+                  />
+                  <circle
+                    cx={cx}
+                    cy={cy}
+                    r={r}
+                    fill={`url(#bg-${c.id})`}
+                    stroke={c.hue}
+                    strokeOpacity="0.6"
+                    strokeWidth="1.5"
+                    className="bubble"
+                    style={{ '--cat-c': c.hue } as React.CSSProperties}
+                  />
+                  <ellipse cx={cx - r * 0.26} cy={cy - r * 0.36} rx={r * 0.42} ry={r * 0.26} fill="#ffffff" opacity="0.08" />
+                  <text x={cx} y={cy - 1} textAnchor="middle" fontSize="15" fontWeight="800" fill="#eef3fa" fontFamily="var(--font-display)">
+                    {n}
+                  </text>
+                  <text x={cx} y={cy + 19} textAnchor="middle" fontSize="11" fill={c.hue} fontFamily="var(--font-mono)" letterSpacing="1.4">
+                    {c.label.toUpperCase()}
+                  </text>
+                </motion.g>
+              )
+            })
+          })()}
         </svg>
       </div>
 
