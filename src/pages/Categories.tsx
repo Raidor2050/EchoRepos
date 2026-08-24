@@ -20,7 +20,7 @@ export default function Categories() {
         <SectionHeading
           eyebrow={`${REPO_COUNT} repos · ${CATEGORIES.length} ecosystems`}
           title="The map of ecosystems"
-          sub="Bubble size = curated depth. Pick a sector to explore its best repositories."
+          sub="Bubble size = curated depth."
         />
       </header>
 
@@ -116,7 +116,7 @@ export default function Categories() {
       </div>
 
       <section className="section container">
-        <SectionHeading eyebrow="the index" title="Every ecosystem, card by card" align="center" />
+        <SectionHeading eyebrow="the index" title="Browse every ecosystem" align="center" />
         <div className="cats-grid">
           {CATEGORIES.map((cat) => {
             const n = categoryCount(cat.id)

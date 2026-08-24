@@ -18,7 +18,7 @@ const STEPS = [
   {
     icon: <IconSparkle size={20} />,
     title: 'Tell us your goal',
-    text: 'Take the 90-second quiz - what you\'re building, your stack, experience level. No account needed.',
+    text: 'Take the 90-second quiz - what you\'re building, your stack, experience level.',
     cta: { to: '/quiz', label: 'Start the quiz' },
     hue: '#ff6ad5',
   },
@@ -32,7 +32,7 @@ const STEPS = [
   {
     icon: <IconBook size={20} />,
     title: 'Learn as you explore',
-    text: 'Every concept, from forks and pull requests to releases, explained in a 3-minute interactive lesson track.',
+    text: 'Forks, pull requests, releases - every concept you meet gets its own interactive lesson.',
     cta: { to: '/learn', label: 'Open Learn' },
     hue: '#a78bfa',
   },
@@ -54,7 +54,7 @@ export default function Home() {
         <div className="hero__inner container">
           <motion.div initial={{ opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
             <span className="eyebrow">
-              <span className="eyebrow__dot" /> {REPO_COUNT} hand-picked repositories · zero fluff
+              <span className="eyebrow__dot" /> {REPO_COUNT} hand-picked repositories
             </span>
             <h1 className="hero__title">
               Navigate the
@@ -87,7 +87,7 @@ export default function Home() {
       {/* ── how it works ── */}
       <section className="section">
         <div className="container">
-          <SectionHeading eyebrow="the loop" title="From lost to contributing in three moves" sub="No sign-up. Everything runs in your browser." />
+          <SectionHeading eyebrow="the loop" title="From lost to contributing in three moves" />
           <div className="steps-grid">
             {STEPS.map((s, i) => (
               <motion.article
@@ -115,7 +115,7 @@ export default function Home() {
       {/* ── featured ecosystems ── */}
       <section className="section section--tinted">
         <div className="container">
-          <SectionHeading eyebrow="start somewhere" title="Five ecosystems worth your time" sub="Or open the full map of every ecosystem." />
+          <SectionHeading eyebrow="start somewhere" title="Five ecosystems worth your time" />
           <div className="feat-grid">
             {featured.map((id, i) => {
               const cat = CATEGORIES.find((c) => c.id === id)!
@@ -173,7 +173,7 @@ export default function Home() {
           <Link to="/quiz" className="btn btn--primary btn--lg">
             <IconSparkle size={17} /> Find my repositories
           </Link>
-          <p style={{ marginTop: 16, fontSize: 12.5, color: 'var(--text-4)', fontFamily: 'var(--font-mono)' }}>~90 seconds · saved locally · nothing leaves your browser</p>
+          <p style={{ marginTop: 16, fontSize: 12.5, color: 'var(--text-4)', fontFamily: 'var(--font-mono)' }}>No account needed - answers stay on your machine</p>
         </div>
       </section>
     </div>

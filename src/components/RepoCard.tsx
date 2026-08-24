@@ -86,9 +86,6 @@ export function RepoCard({ repo, showMatch, match, reasons }: {
             <Link to={`/repo/${repo.id}`} className="btn btn--ghost btn--sm">
               Deep dive
             </Link>
-            <a href={githubUrl(repo.id)} target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">
-              Open on GitHub <IconExternal size={13} />
-            </a>
           </div>
         </div>
       )}

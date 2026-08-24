@@ -303,7 +303,7 @@ export function UniverseCanvas() {
         <div className="univ-tip" style={{ left: hover.x, top: hover.y }}>
           <b>{hover.repo.id}</b>
           <span>
-            ★ {formatCompact(hover.repo.stars)} · {hover.repo.language} - click to visit on GitHub
+            ★ {formatCompact(hover.repo.stars)} · {hover.repo.language}
           </span>
         </div>
       )}

@@ -22,7 +22,7 @@ type Answers = QuizAnswers
 const TECHS = ['any', 'TypeScript', 'JavaScript', 'Python', 'Rust', 'Go', 'Java', 'Kotlin', 'Swift', 'C++', 'C#', 'Ruby']
 
 const CAPABILITIES: Array<{ id?: string; label: string }> = [
-  { label: 'Not sure yet - show the essentials' },
+  { label: 'Not sure yet' },
   { id: 'auth-payments', label: 'Logins & payments' },
   { id: 'data-storage', label: 'Databases & storage' },
   { id: 'ai-integration', label: 'Add AI features' },
@@ -140,7 +140,7 @@ export default function Quiz() {
                 </Q>
               )}
               {step === 2 && (
-                <Q n={3} q="Pick your languages (up to 3)">
+                <Q n={3} q="Pick your languages">
                   <div className="chip-cloud">
                     {TECHS.map((t) => {
                       const on = a.techs.includes(t)
@@ -211,7 +211,6 @@ export default function Quiz() {
                 <button onClick={back} disabled={step === 0} style={{ opacity: step === 0 ? 0.3 : 1 }}>
                   ← Back
                 </button>
-                <span className="mono-note">{step + 1} / {STEP_COUNT}</span>
               </footer>
             </motion.section>
           </AnimatePresence>
@@ -227,11 +226,11 @@ export default function Quiz() {
             <h2 className="h2">{profileString(a) || 'Open explorer'}</h2>
             <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 14 }}>
               <button className="btn btn--ghost" onClick={retake}>Retake quiz</button>
-              <Link className="btn btn--ghost" to="/explore">Browse everything instead</Link>
+              <Link className="btn btn--ghost" to="/explore">Browse everything</Link>
             </div>
           </header>
           {results.length === 0 ? (
-            <EmptyState icon="🎯" title="Answer at least question 1" text="The engine needs your goal to rank matches." action={{ label: 'Take the quiz', onClick: retake }} />
+            <EmptyState icon="🎯" title="No profile yet" text="Ranking starts with your goal." action={{ label: 'Take the quiz', onClick: retake }} />
           ) : (
             <div className="match-grid">
               {results.map(({ repo, match, reasons }, i) => (

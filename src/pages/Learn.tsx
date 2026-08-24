@@ -27,7 +27,7 @@ export default function Learn() {
         <SectionHeading
           eyebrow="the track · 12 concepts"
           title="From zero to first pull request"
-          sub="Read in order or jump around. Progress is saved in your browser."
+          sub="Read in order or jump around."
         />
         <div className="learn-progress" role="status">
           <div className="constellation" aria-hidden>
@@ -131,7 +131,7 @@ function LessonView({ lesson, index }: { lesson: Lesson; index: number }) {
 
       <footer className="lesson-foot">
         <button className={`btn ${isDone ? 'btn--ghost' : 'btn--primary'}`} onClick={() => markLearned(lesson.slug)}>
-          {isDone ? <><IconCheck size={15} /> Learned ✓ (tap to undo)</> : <>Mark as learned</>}
+          {isDone ? <><IconCheck size={15} /> Learned ✓</> : <>Mark as learned</>}
         </button>
         {next && (
           <Link to={`/learn/${next.slug}`} className="btn btn--ghost">

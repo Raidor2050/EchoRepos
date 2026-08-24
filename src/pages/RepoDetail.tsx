@@ -92,7 +92,7 @@ function DetailBody({ repo }: { repo: NonNullable<ReturnType<typeof getRepo>> })
             <SignalBar label="Learning value" v={repo.signals.learning} hue="#ff6ad5" note="docs & ramp quality" />
             <div className="spark-row">
               <Sparkline seedValue={repo.signals.popularity} width={140} />
-              <span className="mono-note">popularity trend (illustrative)</span>
+              <span className="mono-note">illustrative trend</span>
             </div>
           </div>
 

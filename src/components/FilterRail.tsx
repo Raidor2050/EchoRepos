@@ -34,7 +34,7 @@ export function FilterRail({ state }: { state: RailState }) {
           }}
           value={filters.query}
           onChange={(e) => set({ query: e.target.value })}
-          placeholder="natural language…"
+          placeholder="search within results…"
           aria-label="Search within results"
         />
       </div>

@@ -76,7 +76,6 @@ export function LiveTopRepos() {
             <SectionHeading
               eyebrow="live from the github api"
               title="Top repositories on GitHub right now"
-              sub="Fetched straight from GitHub every time this page loads - no snapshot, no stale numbers."
             />
           </div>
           <span className={`live-badge ${status === 'fallback' ? 'is-fallback' : ''}`} role="status" aria-live="polite">

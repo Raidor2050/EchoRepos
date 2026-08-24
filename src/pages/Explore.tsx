@@ -57,9 +57,9 @@ export default function Explore() {
     <div className="page page-explore">
       <header className="page-head container">
         <SectionHeading
-          eyebrow="the full catalog"
-          title="Explore the collection"
-          sub={results.length === 0 ? undefined : `${results.length} repositories match · sorted by ${sort === 'best' ? 'relevance' : sort}`}
+          eyebrow="browse"
+          title="The full catalog"
+          sub={results.length === 0 ? undefined : `${results.length} repositories match`}
         />
         <button className="rail-toggle" onClick={() => setDrawer(true)} aria-label="Open filters">
           <IconMenu size={17} /> Filters
@@ -114,7 +114,7 @@ export default function Explore() {
             <EmptyState
               icon="📡"
               title="No signal in this sector"
-              text="Loosen a filter or try a broader search term."
+              text="Loosen a filter."
               action={{ label: 'Reset all filters', onClick: state.clearAll }}
             />
           )}
